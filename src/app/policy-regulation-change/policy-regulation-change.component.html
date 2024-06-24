@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <!-- <h3>Policy and regulation change </h3> -->
+    <div *ngFor="let policyregulationchange of policyregulationchanges" [id]="generateId(policyregulationchange.fields.headline)">
+        <h4>{{ policyregulationchange.fields.heading }}</h4>
+        <h3 class="headline">{{ policyregulationchange.fields.headline }} | <em class="date"><strong></strong> {{ policyregulationchange.fields.date }}</em></h3>
+      <p>{{ policyregulationchange.fields.country }}</p>
+      <p class="detail">{{ policyregulationchange.fields.detail }}</p>
+      <p class="impact">{{ policyregulationchange.fields.impact }}</p><br> 
+      <!-- <a class="read-more" [href]="policyregulationchange.fields.link" target="_blank">Read more</a> -->
+      <p class="contact"><strong>Contact:</strong> {{ policyregulationchange.fields.contact }}</p>
+    </div>
+</div>

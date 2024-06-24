@@ -1,0 +1,133 @@
+<!-- <div class="container-fluid fl">
+    <h5>Services</h5>
+    <h4>Deloitte offers a comprehensive suite of services, including audit and assurance, consulting, financial advisory, risk management, and tax services, tailored to help businesses navigate complex challenges and achieve their strategic goals.</h4><br>
+<div id="combinedCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" src="https://brandspace.deloitte.com/downloads/57c4892b86783/lg_BJ02C8.jpg.jpg?q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <p class="m-0 text-white">Audit & Assurance</p>
+                  </div>
+              </div>
+            </div>
+            
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" src="https://brandspace.deloitte.com/downloads/5f1a8abba9ce4/lg_1161254959.jpg.jpg?q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <p class="m-0 text-white">Consulting</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                  <img class="img-fluid zoom" alt="100%x280" src="https://brandspace.deloitte.com/downloads/58aeb6619ed24/lg_F584FA.jpg.jpg?q=80&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                  <div class="position-absolute top-50 start-50 translate-middle">
+                    <p class="m-0 text-white">Financial Advisory</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" src="https://brandspace.deloitte.com/downloads/5d76b3048a3e3/lg_shutterstock_520407727.jpg.jpg?q=80&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <p class="m-0 text-white">Risk Advisory</p>
+                  </div>
+              </div>
+            </div>
+            
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" src="https://as2.ftcdn.net/v2/jpg/02/10/49/77/1000_F_210497736_Ox9g5voTl92uIvPXBTR9AVeg8JbCWHkk.jpg?q=80&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <p class="m-0 text-white">Legal</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                  <img class="img-fluid zoom" alt="100%x280" src="https://t3.ftcdn.net/jpg/07/20/10/40/240_F_720104093_7Ng2FVD0ZRTObh2C46ikrtzh4IsPAuhX.jpg?q=80&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                  <div class="position-absolute top-50 start-50 translate-middle">
+                    <p class="m-0 text-white">Tax</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#combinedCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#combinedCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div> -->
+
+
+
+
+
+<div class="container-fluid fl">
+  <h5>Services</h5>
+  <h4 *ngFor="let service of services">{{ service.fields['description'] }}</h4><br>
+  <div id="combinedCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let service of services; let i = index" [class.active]="i === 0">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl']" />
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <p class="m-0 text-white">{{ service.fields['service'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl1']" />
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <p class="m-0 text-white">{{ service.fields['service1'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl2']" />
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <p class="m-0 text-white">{{ service.fields['service2'] }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#combinedCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#combinedCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+  

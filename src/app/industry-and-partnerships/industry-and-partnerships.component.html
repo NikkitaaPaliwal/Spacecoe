@@ -1,0 +1,27 @@
+<!-- <ul>
+  <li *ngFor="let industry of industries" [id]="generateId(industry.fields.headline)">
+    <h2>{{ industry.fields.headline }}</h2>
+    <p>{{ industry.fields.detail }}</p>
+    <p>Country: {{ industry.fields.country }}</p>
+    <p>Date: {{ industry.fields.date }}</p>
+    <p>Impact: {{ industry.fields.impact }}</p>
+    <p>Contact: {{ industry.fields.contact }}</p>
+    <a [href]="industry.fields.link" target="_blank">Link</a>
+  </li>
+</ul> -->
+
+
+
+
+<div class="container-fluid">
+  <!-- <h3>Industry And Partnerships</h3> -->
+  <div *ngFor="let industry of industries" [id]="generateId(industry.fields.headline)">
+    <h4>{{ industry.fields.heading }}</h4>
+    <h3 class="headline">{{ industry.fields.headline }}  | <em class="date"><strong></strong> {{ industry.fields.date }}</em></h3>
+    <p>{{ industry.fields.country }}</p>
+    <p class="detail">{{ industry.fields.detail }}</p>
+    <p class="impact">{{ industry.fields.impact }}</p><br>
+    <!-- <a class="read-more" [href]="industry.fields.link" target="_blank">Read more</a> -->
+    <p class="contact"><strong>Contact:</strong> {{ industry.fields.contact }}</p>
+  </div>
+</div>

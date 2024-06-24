@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <!-- <h3>STA SCI Tech Advancement</h3> -->
+    <div *ngFor="let scitechadvancement of scitechadvancements" [id]="generateId(scitechadvancement.fields.headline)">
+      <h4>{{ scitechadvancement.fields.heading }}</h4>
+      <h3 class="headline">{{ scitechadvancement.fields.headline }} | <em class="date"><strong></strong> {{ scitechadvancement.fields.date }}</em></h3>
+      <p>{{ scitechadvancement.fields.country }}</p>
+      <p class="detail">{{ scitechadvancement.fields.detail }}</p>
+      <p class="impact">{{ scitechadvancement.fields.impact }}</p><br> 
+      <!-- <a class="read-more" [href]="scitechadvancement.fields.link" target="_blank">Read more</a> -->
+      <p class="contact"><strong>Contact:</strong> {{ scitechadvancement.fields.contact }}</p>
+    </div>
+</div>

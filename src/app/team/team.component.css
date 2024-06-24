@@ -1,0 +1,146 @@
+.container-fluid{
+    /* background-color: black; */
+
+    height: 430px;
+    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+}
+
+h5{
+    color: black;
+    padding-top: 2%;
+    /* padding-left: 5%; */
+}
+
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    border: none;
+  }
+  
+  .card__image {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    /* background-color: var(--surface-color); */
+    transform: translateY(100%);
+    transition: 0.2s ease-in-out;
+    background-color: black;
+    
+  }
+  
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+  
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    padding: 2em;
+    transform: translateY(-100%);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .card__arc {
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .card__arc path {
+    fill: var(--surface-color);
+  }
+  
+  .card:hover .card__header {
+    transform: translateY(0);
+  }
+  
+  .card__thumb {
+    flex-shrink: 0;
+    width: 3.125em;
+    height: 3.125em;
+    border-radius: 50%;
+  }
+  
+  .card__title {
+    font-size: 1em;
+    margin: 0 0 0.3em;
+  }
+  
+  .card__status {
+    font-size: 0.8em;
+  }
+  
+  .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  
+
+
+  @media (max-width: 768px) {
+    .container-fluid {
+      height: auto; /* Set height to auto for flexible height */
+      padding-bottom: 20px; /* Add padding at the bottom for spacing */
+    }
+  
+    .col-sm-3 {
+      padding-top: 0; /* Remove top padding for columns */
+      margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    }
+  
+    .card__image {
+      height: auto; /* Set height to auto for flexible height */
+    }
+  
+    .card__overlay {
+      bottom: -100%; /* Reset bottom position for overlay */
+      transform: translateY(0); /* Reset transform for overlay */
+      transition: none; /* Remove transition for overlay */
+      background-color: black; /* Change overlay background color */
+    }
+  
+    .card:hover .card__overlay {
+      bottom: 0; /* Move overlay up on hover */
+    }
+  
+    .card__header {
+      transform: translateY(0); /* Reset transform for header */
+      transition: none; /* Remove transition for header */
+    }
+  
+    .card:hover .card__header {
+      transform: translateY(0); /* Move header up on hover */
+    }
+  
+    .card__description {
+      padding: 0 1em 1em; /* Adjust padding for smaller screens */
+    }
+    h5,h3,p{
+      font-size: 100%;
+    }
+  }
+  

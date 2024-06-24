@@ -1,0 +1,71 @@
+.zoom {
+    transition: transform 0.2s; /* Adjust the transition speed as needed */
+    cursor: pointer; /* Change cursor to pointer when hovering over the image */
+    height: 250px;
+  }
+
+  .zoom:hover {
+    transform: scale(1.1); /* Increase scale on hover */
+  }
+  .fl{
+    background-color: black;
+    margin-top: -5%;
+    height: 400px;
+    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+  }
+  h5{
+    color: white;
+    padding-top: 2%;
+    /* padding-left: 5%; */
+  }
+  h4{
+    color: white;
+    /* text-align: center;  */
+  }
+  .text-white{
+    color: white;
+    text-align: center;
+    background-color: rgba(1, 1, 1, 0.5);
+    font-size:20px ;
+    font-weight: bold;
+  }
+  p{
+    color:black;
+  }
+  .card{
+    border: none;
+  }
+  /* .card-body{
+    margin-bottom: 5%;
+  } */
+
+
+
+
+  @media (max-width: 768px) {
+  .fl {
+    height: auto; /* Set height to auto for flexible height */
+    padding-bottom: 20px; /* Add padding at the bottom for spacing */
+  }
+
+  .carousel-item {
+    display: flex;
+    flex-wrap: wrap; /* Allow carousel items to wrap on smaller screens */
+  }
+
+  .col-sm {
+    flex: 0 0 100%; /* Set columns to full width on smaller screens */
+    padding-top: 20px; /* Add top padding for spacing */
+  }
+
+  .zoom {
+    height: auto; /* Set height to auto for flexible height */
+  }
+
+  .text-white {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+  h5,h4{
+    font-size: 100%;
+  }
+}

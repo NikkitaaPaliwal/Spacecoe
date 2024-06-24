@@ -1,0 +1,89 @@
+<!-- <div class="container-fluid">
+    <h5 class="hs">Article</h5>
+    <h4>Explore our latest insights, expert analyses, and industry trends in satellite technology. Stay informed with our comprehensive articles on advancements, applications, and innovations in the satellite services sector.</h4><br>
+    <div class="row">
+      
+    <div class="col-sm-4">
+        <div class="card">
+          <img src="https://brandspace.deloitte.com/downloads/5d782a39f09bd/lg_shutterstock_114662479.jpg.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Communications Satellite</h5>
+            <p class="card-text"> It is an artificial satellite that receives signals from an earth station, re transmitting them to other earth stations. <a href="#" class="fa-solid fa-arrow-right"></a></p>   
+          </div>
+        </div>
+      </div>
+     
+        <div class="col-sm-4">
+        <div class="card">
+          <img src="https://brandspace.deloitte.com/downloads/5713bcb26ee05/lg_ind_TMT_glb_ho_2344.jpg.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Remote Sensing Satellite</h5>
+            <p class="card-text">initiating with IRS-1A in 1988. Currently, India has one of the largest constellations of remote sensing satellites in operation <a href="#" class="fa-solid fa-arrow-right"></a></p>
+          </div>
+        </div>
+      </div>
+      
+        <div class="col-sm-4">
+        <div class="card">
+          <img src="https://brandspace.deloitte.com/downloads/589b4b6a2de2a/lg_shutterstock_160805858.jpg.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Navigation Satellite</h5>
+            <p class="card-text"> ISRO is working with Airport Authority of India (AAI) to meet the Civil Aviation requirements in establishing the GPS Aided Geo Augmented Navigation (GAGAN) system <a href="#" class="fa-solid fa-arrow-right"></a></p>
+          </div>
+        </div>
+      </div>
+      
+        <div class="col-sm-4">
+        <div class="card">
+          <img src="https://brandspace.deloitte.com/downloads/570fb480b6898/lg_shutterstock_111184442-th.jpg.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Geocentric Orbit type satellites</h5>
+            <p class="card-text"> geocentric orbit, Earth-centered orbit, or Earth orbit involves any object orbiting Earth, such as the Moon or artificial satellites <a href="#" class="fa-solid fa-arrow-right"></a></p>   
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+          <img src="https://brandspace.deloitte.com/downloads/57125b5e8f5d8/lg_evn_glb_ho_2365.jpg.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Global Positioning System</h5>
+            <p class="card-text">GPS, space-based radio-navigation system.<a href="#" class="fa-solid fa-arrow-right"></a></p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+          <img src="https://brandspace.deloitte.com/downloads/61571acf5c81d/lg_shutterstock_1197282490.jpg.jpg" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Geostationary Satellites</h5>
+            <p class="card-text">Geostationary satellites require some station keeping to keep their position, and once they run out of thruster fuel they are generally retired. <a href="#" class="fa-solid fa-arrow-right"></a></p>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+  <div class="container-fluid">
+    <h5 class="hs">Article</h5>
+    <h4 *ngFor="let article of articles">{{ article.fields['description'] }}</h4><br>
+    <div class="row">
+      
+    <div class="col-sm-4" *ngFor="let article of articles">
+        <div class="card">
+          <img [src]="article.fields['imgurl']" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ article.fields['articletittle'] }}</h5>
+            <p class="card-text"> {{ article.fields['articledescription'] }} <a href="#" class="fa-solid fa-arrow-right"></a></p>   
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+

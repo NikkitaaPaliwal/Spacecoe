@@ -1,0 +1,135 @@
+/* .container-fluid {
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+}
+.country {
+    margin-bottom: 20px;
+}
+.country-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.article {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.headline {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.detail {
+    margin-bottom: 10px;
+}
+.impact {
+    font-style: italic;
+    color: rgb(210, 204, 204);
+}
+.date,.contact{
+  font-size: smaller;
+  font-weight: lighter;
+  color: #dad5d5;
+}
+.read-more {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color:  #26890d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  height: 25px;
+  font-size: small;
+}
+.read-more:hover {
+  
+  color: white;
+}
+.startup-capability {
+    font-style: italic;
+    color: #FFFFFF; 
+    margin-bottom: 10px;
+} */
+
+.container-fluid {
+    padding: 20px;
+    background-color: black;
+    color: #FFFFFF;
+    font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+  }
+  
+  .container-fluid h4 {
+    margin-bottom: 10px;
+  }
+  
+  .container-fluid p {
+    margin-bottom: 5px;
+  }
+  
+  .read-more {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color:  #26890d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    height: 25px;
+    font-size: small;
+  }
+  .read-more:hover {
+    
+    color: white;
+  }
+  
+
+  .impact {
+    font-style: italic;
+    color: rgb(210, 204, 204);
+}
+
+.headline {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.date,.contact{
+  font-size: smaller;
+  font-weight: lighter;
+  color: #dad5d5;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .container-fluid {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  
+    .container-fluid h4 {
+      font-size: 100%; /* Decrease font size for smaller screens */
+    }
+  
+    .container-fluid p {
+      font-size: 100%; /* Decrease font size for smaller screens */
+    }
+  
+    .headline {
+      font-size: 100%; /* Decrease font size for smaller screens */
+    }
+  
+    .date, .contact {
+      font-size: 100%; /* Adjust font size for smaller screens */
+    }
+  }
+  

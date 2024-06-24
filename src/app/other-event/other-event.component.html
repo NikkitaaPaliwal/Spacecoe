@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <!-- <h3>Other Events</h3> -->
+    <div *ngFor="let otherEvent of otherEvents" [id]="generateId(otherEvent.fields.headline)">
+        <h4>{{ otherEvent.fields.heading }}</h4>
+      <h3 class="headline">{{ otherEvent.fields.headline }} | <em class="date"><strong></strong> {{ otherEvent.fields.date }}</em></h3>
+      <p>{{ otherEvent.fields.location }}</p>
+      <p class="detail">{{ otherEvent.fields.detail }}</p>
+      <p class="impact">{{ otherEvent.fields.registrationfee }}</p><br>
+      <!-- <a class="read-more" [href]="otherEvent.fields.link" target="_blank">Read more</a> -->
+      <!-- <p class="contact"><strong>Contact:</strong> {{ otherEvent.fields.contact }}</p> -->
+    </div>
+</div>

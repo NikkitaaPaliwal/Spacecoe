@@ -1,0 +1,42 @@
+
+
+<!-- <div class="container-fluid">
+    <h5>The Future Satellites</h5>
+    <h4>Discover groundbreaking advancements and visionary concepts in satellite technology. Delve into 'The Future Satellite' to explore how emerging innovations are set to transform global connectivity and beyond.</h4><br>
+    <div class="row">
+        <div class="col video-container"> -->
+            <!-- <iframe src="https://dlmultimedia.esa.int/download/public/videos/2022/08/018/2208_018_BR_004.mp4" title="Vimeo video" allowfullscreen></iframe> -->
+            <!-- <video class="w-100" autoplay loop muted> -->
+                <!-- <source src="https://videos.pexels.com/video-files/854239/854239-hd_1280_720_30fps.mp4" type="video/mp4" /> -->
+                <!-- <source src="https://v.ftcdn.net/01/43/01/67/700_F_143016779_ghP2C2wzuqhoTsKXk7TsmZJ0iJmfNyTt_ST.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="col video-container">
+            <video class="w-100" autoplay loop muted> -->
+                <!-- <source src="https://videos.pexels.com/video-files/854224/854224-hd_1280_720_30fps.mp4" type="video/mp4" /> -->
+                <!-- <source src="https://v.ftcdn.net/03/54/41/68/700_F_354416807_dU6shK8F9kHHwdQ0ywqnKdOekHJEXCh0_ST.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid">
+    <div *ngFor="let futuresatellite of futuresatellites">
+        <h5>{{ futuresatellite.fields['tittle'] }}</h5> <!-- Use square brackets here -->
+        <h4>{{ futuresatellite.fields['description'] }}</h4><br> <!-- Use square brackets here -->
+        <div class="row">
+            <div class="col video-container">
+                <video class="w-100" autoplay loop muted>
+                    <source [src]="futuresatellite.fields['video1']" type="video/mp4" /> <!-- Use square brackets here -->
+                </video>
+            </div>
+            <div class="col video-container">
+                <video class="w-100" autoplay loop muted>
+                    <source [src]="futuresatellite.fields['video2']" type="video/mp4" /> <!-- Use square brackets here -->
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+

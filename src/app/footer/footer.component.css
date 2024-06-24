@@ -1,0 +1,79 @@
+.user-link {
+    text-decoration: none;
+    color: white;
+    padding-left: 3%;
+    font-size: small;
+  }
+
+  .user-link:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .container-fluid{
+    background-color: black;
+    height: 120px;
+    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+  }
+  .col-sm-4{
+    padding-top: 4%;
+    /* padding-left: 3%; */
+    text-align: center;
+  }
+  .copyright{
+    color: white;
+    font-size: small;
+  }
+  .fa-facebook-f{
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px; 
+    width: 16px;
+    height: 15px;
+  }
+  .fa-twitter{
+    background-color: white;
+    margin-left: 3%;
+    border-radius: 50%;
+    padding: 5px; 
+    width: 16px;
+    height: 15px;
+  } 
+   .fa-linkedin{
+    background-color: white;
+    margin-left: 3%;
+    border-radius: 50%;
+    padding: 5px; 
+    width: 16px;
+    height: 15px;
+  }
+  .fa-youtube{
+    background-color: white;
+    margin-left: 3%;
+    border-radius: 50%;
+    padding: 5px; 
+    width: 16px;
+    height: 15px;
+  }
+  .fa-instagram{
+    background-color: white;
+    margin-left: 3%;
+    border-radius: 50%;
+    padding: 5px; 
+    width: 16px;
+    height: 15px;
+  }
+
+
+  @media (max-width: 768px) {
+    .col-sm-4 {
+      padding-top: 3%; /* Adjust padding for smaller screens */
+    }
+  
+    .fa {
+      margin-left: 2%; /* Adjust margin between social icons */
+    }
+    .p,a{
+      font-size: 100%;
+    }
+  }
+  

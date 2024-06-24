@@ -1,0 +1,59 @@
+<!-- <div class="container-fluid p-0">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://as1.ftcdn.net/v2/jpg/06/58/78/96/1000_F_658789618_PfCKPJhTflcD7Vw9hLheAY5deCqEfIHl.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Focused on space-related activities. Downstream in the context of space generally refers to activities related to the application of space-derived data and technology on Earth. This could include satellite imagery analysis, remote sensing applications, geographic information systems (GIS), environmental monitoring, disaster management, and various other Earth observation applications.</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://as1.ftcdn.net/v2/jpg/03/28/39/40/1000_F_328394026_Cm7B0QY19zrVA8C885CVSQDv29atqget.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Welcome to the forefront of satellite technology, where innovation meets reliability. Our satellite services pave the way for uninterrupted connectivity, 
+              offering a wide array of solutions tailored to your needs. From global communications to remote sensing and beyond, explore a universe of possibilities 
+              with our cutting-edge satellite services. Stay connected, stay empowered, and transcend boundaries with us</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://as2.ftcdn.net/v2/jpg/02/51/16/69/1000_F_251166908_z4sfY4X6lPuNcIlfViI2XpG0716Npxce.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Experience unparalleled connectivity with our comprehensive satellite services. Whether it's global communication, high-speed internet, or advanced remote sensing, 
+              our state-of-the-art solutions ensure you stay connected anywhere on Earth. Join us in revolutionizing the way you communicate, explore, and innovate with our 
+              reliable and cutting-edge satellite technologies.</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div> -->
+
+
+
+  <div class="container-fluid p-0">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let home of homes; let i = index" [class.active]="i === 0">
+          <img [src]="home.fields['imgurl']" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{ home.fields['description'] }}</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>

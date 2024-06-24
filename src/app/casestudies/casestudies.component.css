@@ -1,0 +1,106 @@
+/* .container-fluid{
+    background-color: black;
+
+    height: 550px;
+}
+h5{
+    color: white;
+    padding-top: 2%;
+    padding-left: 5%;
+}
+.card{
+    width:400px;
+    border: none;
+}
+img{
+    height: 250px;
+}
+.card-text a {
+    text-decoration: none;
+    color: black;
+}
+
+.card-text a:hover {
+    text-decoration: underline;
+}
+
+.col-sm-5{
+text-align: center;
+padding-left: 14%;
+}
+h6{
+    text-align: center;
+}
+.nav-link{
+color: white;
+} */
+/* .assets{
+    width:500px;
+} */
+
+
+
+ .nav-link{
+    color: rgb(12, 12, 12);
+}
+.card-text a {
+    text-decoration: none;
+    color: black;
+}
+.card-text a:hover {
+    text-decoration: underline;
+}
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+    margin-top: -22px;
+
+    height: 1150px;
+}
+.card {
+    width: 370px;
+    height: 340px;
+    margin: 10px; 
+    border: none;
+    overflow: hidden;
+}
+.card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.col-sm-4 {
+    text-align: center;
+}
+.heading {
+    color: white;
+    font-size: 18px;
+}
+
+
+@media (max-width: 768px) {
+    .container-fluid {
+      flex-direction: column; /* Change flex direction to stack cards vertically */
+      align-items: center; /* Center align content */
+      height: auto; /* Auto height */
+      padding: 20px; /* Add padding for spacing */
+    }
+    
+    .card {
+      width: 80%; /* Adjust width to fit smaller screens */
+      height: auto; /* Set height to auto for flexible height */
+      margin: 10px auto; /* Center cards and add spacing */
+    }
+    
+    .col-sm-4 {
+      text-align: center; /* Center align column content */
+    }
+    
+    .heading {
+      font-size: 100%; /* Adjust heading font size for smaller screens */
+    }
+  }
+  
+

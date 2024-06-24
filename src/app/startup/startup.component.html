@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h3>Startup</h3>
+    <div *ngFor="let startup of startups" [id]="generateId(startup.fields.headline)">
+        <h4>{{ startup.fields.heading }}</h4>
+        <h3 class="headline">{{ startup.fields.headline }} | <em class="date"><strong></strong> {{ startup.fields.date }}</em></h3>
+      <p>{{ startup.fields.country }}</p>
+      <p class="detail">{{ startup.fields.detail }}</p>
+      <p class="impact">{{ startup.fields.impact }}</p>
+      <p>{{ startup.fields.startupcapability }}</p><br>
+      <!-- <a class="read-more" [href]="startup.fields.link" target="_blank">Read more</a> -->
+      <p class="contact"><strong>Contact:</strong> {{ startup.fields.contact }}</p>
+    </div>
+</div>
