@@ -2,7 +2,7 @@
 .space-events-container {
   padding: 111px 20px;
   /* background-color: #fff; */
-  background: url('../../../docs/assets/images/newearth.jpg') no-repeat;
+  background: url('../../../assets/images/newearth.jpg') no-repeat;
   background-size: cover;
   font-family: 'Arial', sans-serif;
   color: #1c1c1c; 
@@ -77,7 +77,7 @@
 
   .event-content {
   padding: 20px;
-    background: url("../../../docs/assets/images/newearth.jpg");
+    background: url("../../../assets/images/newearth.jpg");
     width: 40%;
     height: 500px;
     display: flex;

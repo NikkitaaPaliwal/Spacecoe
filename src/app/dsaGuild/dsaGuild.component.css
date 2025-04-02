@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   padding: 100px 20px;
-  background: url('../../../docs/assets/images/earth2.jpg') no-repeat center center;
+  background: url('../../assets/images/earth2.jpg') no-repeat center center;
   background-size: cover;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
