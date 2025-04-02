@@ -13,7 +13,7 @@
 
 .image-container {
   flex: 1; /* Takes up 1 part of the flex container */
-  background: url('../../assets/images/milkyway.jpg') no-repeat center center;
+  background: url('../../../docs/assets/images/milkyway.jpg') no-repeat center center;
   background-size: cover; /* Cover the full area of the div */
   min-width: 40%;
 }
