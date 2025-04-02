@@ -1,13 +1,11 @@
-
 <div class="container-fluid">
-    <!-- <h3>Other</h3> -->
-    <div *ngFor="let other of others" [id]="generateId(other.fields.headline)">
-        <h4>{{ other.fields.heading }}</h4>
-      <h3 class="headline">{{ other.fields.headline }} | <em class="date"><strong></strong> {{ other.fields.date }}</em></h3>
-      <p>{{ other.fields.country }}</p>
+  <div *ngFor="let other of others" [id]="generateId(other.fields.headline)">
+      <h4 class="heading">{{ other.fields.heading }}</h4>
+      <h3 class="headline">{{ other.fields.headline }}</h3>
+      <p class="date"><strong>Date:</strong> {{ other.fields.date }}</p>
+      <p class="country"><strong>Country:</strong> {{ other.fields.country }}</p>
       <p class="detail">{{ other.fields.detail }}</p>
-      <p class="impact">{{ other.fields.impact }}</p><br>
-      <!-- <a class="read-more" [href]="other.fields.link" target="_blank">Read more</a> -->
+      <p class="impact"><strong>Impact:</strong> {{ other.fields.impact }}</p>
       <p class="contact"><strong>Contact:</strong> {{ other.fields.contact }}</p>
-    </div>
+  </div>
 </div>

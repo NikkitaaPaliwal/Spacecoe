@@ -1,13 +1,12 @@
-
 <div class="container-fluid">
-    <div *ngFor="let competitor of competitors" [id]="generateId(competitor.fields.headline)">
-        <h4>{{ competitor.fields.heading }}</h4>
-        <h3 class="headline">{{ competitor.fields.headline }} | <em class="date"><strong></strong> {{ competitor.fields.date }}</em></h3>
-      <p>{{ competitor.fields.country }}</p>
-      <p>{{ competitor.fields.competitor }}</p>
+  <div *ngFor="let competitor of competitors" [id]="generateId(competitor.fields.headline)">
+      <h4 class="heading">{{ competitor.fields.heading }}</h4>
+      <h3 class="headline">{{ competitor.fields.headline }}</h3>
+      <p class="date"><strong>Date:</strong> {{ competitor.fields.date }}</p>
+      <p class="country"><strong>Country:</strong> {{ competitor.fields.country }}</p>
+      <p class="competitor"><strong>Competitor:</strong> {{ competitor.fields.competitor }}</p>
       <p class="detail">{{ competitor.fields.detail }}</p>
-      <p class="impact">{{ competitor.fields.impact }}</p><br>
-      <!-- <a class="read-more" [href]="competitor.fields.link" target="_blank">Read more</a> -->
+      <p class="impact"><strong>Impact:</strong> {{ competitor.fields.impact }}</p>
       <p class="contact"><strong>Contact:</strong> {{ competitor.fields.contact }}</p>
-    </div>
+  </div>
 </div>

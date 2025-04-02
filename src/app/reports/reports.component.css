@@ -1,0 +1,201 @@
+/* reports.component.css */
+.reports-container {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.reports-wrapper {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.report-card {
+  background: #000000;
+  overflow: hidden;
+  width: 100%;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.report-content {
+  position: relative;
+  padding: 2rem;
+}
+
+.accent-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%; /* Changed from 80% to 100% to extend full height */
+  background: #00FF00;
+}
+
+.content-wrapper {
+  padding-left: 2rem;
+  padding-top: 0; /* Added to remove top spacing */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  margin-top: 0; /* Added to remove top spacing */
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.title-segment {
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.publish-info {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.report-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.earth-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .report-image {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reports-wrapper {
+    padding: 1rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .report-content {
+    padding: 1rem;
+  }
+
+  .content-wrapper {
+    padding-left: 1rem;
+  }
+
+  .accent-line {
+    width: 3px;
+  }
+}
+
+/* reports.component.css */
+
+/* Existing styles... */
+.read-more {
+  margin-top: auto; /* This will push the button to the bottom of the content area */
+  padding-bottom: 2rem; /* Add some padding at the bottom */
+}
+
+.read-more-button {
+  background-color: transparent;
+  border: 2px solid #00FF00;
+  color: #00FF00;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.report-content {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.read-more-button:hover {
+  background-color: #00FF00;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+}
+
+.read-more-button:active {
+  transform: translateY(0);
+}

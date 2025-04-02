@@ -21,22 +21,17 @@
 </div> -->
 
 <div class="container-fluid">
-    <div *ngFor="let futuresatellite of futuresatellites">
-        <h5>{{ futuresatellite.fields['tittle'] }}</h5> <!-- Use square brackets here -->
-        <h4>{{ futuresatellite.fields['description'] }}</h4><br> <!-- Use square brackets here -->
-        <div class="row">
-            <div class="col video-container">
-                <video class="w-100" autoplay loop muted>
-                    <source [src]="futuresatellite.fields['video1']" type="video/mp4" /> <!-- Use square brackets here -->
-                </video>
+    <div *ngFor="let futuresatellite of futuresatellites" class="content-wrapper">
+        <div class="background-container">
+            <div class="image-container">
+                <img [src]="futuresatellite.fields['video1']" alt="Background Image 1" class="background-image" />
+                <!-- <img [src]="futuresatellite.fields['video2']" alt="Background Image 2" class="background-image" /> -->
             </div>
-            <div class="col video-container">
-                <video class="w-100" autoplay loop muted>
-                    <source [src]="futuresatellite.fields['video2']" type="video/mp4" /> <!-- Use square brackets here -->
-                </video>
+            <div class="text-overlay">
+                <h5>{{ futuresatellite.fields['tittle'] }}</h5>
+                <h4>{{ futuresatellite.fields['description'] }}</h4>
             </div>
         </div>
     </div>
 </div>
-
 

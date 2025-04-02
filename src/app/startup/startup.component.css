@@ -1,137 +1,208 @@
-/* .container-fluid {
-    margin: 0;
-    padding: 20px;
-    background-color: black;
-    color: white;
-    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+/* Base Container Styles */
+.container-fluid {
+  padding: 20px;
+  background-color: #1c1c1e;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: backgroundFade 10s infinite;
 }
-.country {
-    margin-bottom: 20px;
+
+/* Background Fade Animation */
+@keyframes backgroundFade {
+  0% { background-color: #1c1c1e; }
+  50% { background-color: #333335; }
+  100% { background-color: #1c1c1e; }
 }
-.country-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+
+/* Individual Card Styles */
+.container-fluid div {
+  background-color: #292929;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  transition: transform 0.3s ease;
+  overflow-wrap: break-word;
+  cursor: pointer;
 }
-.article {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 20px;
+
+.container-fluid div:hover {
+  transform: scale(1.02);
 }
-.headline {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+
+/* Typography and Animations */
+.container-fluid h4,
+.container-fluid .headline,
+.container-fluid .detail,
+.container-fluid .impact,
+.container-fluid .startup-capability,
+.container-fluid .contact {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: writingAnimation 2s steps(30, end) forwards;
 }
-.detail {
-    margin-bottom: 10px;
+
+/* Writing Animation */
+@keyframes writingAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
-.impact {
-    font-style: italic;
-    color: rgb(210, 204, 204);
+
+/* Staggered Animation for Sequential Reveal */
+.container-fluid h4 {
+  animation-delay: 0.5s;
 }
-.date,.contact{
-  font-size: smaller;
-  font-weight: lighter;
+.container-fluid .headline {
+  animation-delay: 1s;
+}
+.container-fluid .detail {
+  animation-delay: 1.5s;
+}
+.container-fluid .impact {
+  animation-delay: 2s;
+}
+.container-fluid .startup-capability {
+  animation-delay: 2.5s;
+}
+.container-fluid .contact {
+  animation-delay: 3s;
+}
+
+/* Headings and Text */
+.container-fluid h4 {
+  font-size: 1.5rem;
+  color: #00e676;
+  margin-bottom: 5px;
+}
+
+.container-fluid .headline {
+  color: #ffeb3b;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container-fluid .date {
+  font-size: 0.9rem;
+  color: #bdbdbd;
+  font-style: italic;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container-fluid .country {
+  font-size: 1rem;
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.container-fluid .detail,
+.container-fluid .impact,
+.container-fluid .startup-capability,
+.container-fluid .contact {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.container-fluid .impact {
+  font-style: italic;
+  color: #90caf9;
+}
+
+.container-fluid .contact {
+  font-size: 14px;
   color: #dad5d5;
 }
+
+/* Read More Button */
 .read-more {
   display: inline-block;
-  padding: 5px 10px;
-  background-color:  #26890d;
+  padding: 8px 15px;
+  background-color: #26c6da;
   color: #fff;
   text-decoration: none;
-  border-radius: 3px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-  height: 25px;
-  font-size: small;
+  transition: background-color 0.3s ease;
 }
+
 .read-more:hover {
-  
-  color: white;
+  background-color: #00acc1;
 }
-.startup-capability {
-    font-style: italic;
-    color: #FFFFFF; 
-    margin-bottom: 10px;
-} */
 
-.container-fluid {
-    padding: 20px;
-    background-color: black;
-    color: #FFFFFF;
-    font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+/* Responsive Adjustments for Tablets */
+@media (max-width: 1024px) {
+  .container-fluid {
+    padding: 15px;
   }
-  
+
   .container-fluid h4 {
-    margin-bottom: 10px;
+    font-size: 20px;
   }
-  
-  .container-fluid p {
-    margin-bottom: 5px;
-  }
-  
-  .read-more {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color:  #26890d;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    height: 25px;
-    font-size: small;
-  }
-  .read-more:hover {
-    
-    color: white;
-  }
-  
 
-  .impact {
-    font-style: italic;
-    color: rgb(210, 204, 204);
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .impact,
+  .container-fluid .startup-capability,
+  .container-fluid .contact {
+    font-size: 15px;
+    white-space: normal;
+  }
 }
 
-.headline {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.date,.contact{
-  font-size: smaller;
-  font-weight: lighter;
-  color: #dad5d5;
-}
-
-
-
+/* Responsive Adjustments for Mobile Devices */
 @media (max-width: 768px) {
   .container-fluid {
-    padding: 10px; /* Adjust padding for smaller screens */
+    padding: 10px;
+    gap: 15px;
   }
 
-  .container-fluid h3 {
-    font-size: 100%; /* Decrease font size for smaller screens */
+  .container-fluid div {
+    padding: 12px;
   }
 
   .container-fluid h4 {
-    font-size: 100%; /* Decrease font size for smaller screens */
+    font-size: 18px;
   }
 
-  .container-fluid p {
-    font-size: 100%; /* Decrease font size for smaller screens */
-  }
-
-  .headline {
-    font-size: 100%; /* Decrease font size for smaller screens */
-  }
-
-  .date, .contact {
-    font-size: 100%; /* Adjust font size for smaller screens */
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .impact,
+  .container-fluid .startup-capability,
+  .container-fluid .contact {
+    font-size: 14px;
+    white-space: normal;
   }
 }
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .container-fluid {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .container-fluid div {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .container-fluid h4 {
+    font-size: 16px;
+  }
+
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .impact,
+  .container-fluid .startup-capability,
+  .container-fluid .contact {
+    font-size: 13px;
+    white-space: normal;
+  }
+}
+  

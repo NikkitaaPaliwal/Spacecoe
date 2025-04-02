@@ -12,17 +12,22 @@
   </ul> -->
 
   <div class="container-fluid">
-    <!-- <h3>Investment And Funding</h3> -->
     <div *ngFor="let investment of investments" [id]="generateId(investment.fields.headline)">
-      <h4>{{ investment.fields.heading }}</h4>
-      <h3 class="headline">{{ investment.fields.headline }}  | <em class="date"><strong></strong> {{ investment.fields.date }}</em></h3>
-      <p>{{ investment.fields.country }}</p>
-      <p class="detail">{{ investment.fields.detail }}</p>
-      <p class="impact">{{ investment.fields.impact }}</p><br>
-      <!-- <a class="read-more" [href]="investment.fields.link" target="_blank">Read more</a> -->
-      <p class="contact"><strong>Contact:</strong> {{ investment.fields.contact }}</p>
+      <!-- <div class="article-header"> -->
+        <h4 class="heading">{{ investment.fields.heading }}</h4>
+        <h3 class="headline">{{ investment.fields.headline }}</h3>
+        <p class="date"><strong>Date: {{ investment.fields.date }}</strong> </p>
+      <!-- </div> -->
+      <!-- <div class="article-body"> -->
+        <p class="country"><strong>Country:</strong> {{ investment.fields.country }}</p>
+        <p class="detail">{{ investment.fields.detail }}</p>
+        <p class="impact"><strong>Impact:</strong>{{ investment.fields.impact }}</p><br>
+        <!-- </div> -->
+        <p class="contact"><strong>Contact:</strong> {{ investment.fields.contact }}</p>
     </div>
-  </div>
+</div>
+
+
 
   
   

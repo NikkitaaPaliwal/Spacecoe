@@ -1,0 +1,299 @@
+<!-- publications.component.html -->
+<app-header></app-header>
+<div class="publications-container" *ngFor="let reports of reports" id="publication-content">
+    <div class="article-section">
+        <img src="../../assets/images/obj1.jpg" alt="Report Cover" class="article-image">
+        <div class="article-content">
+            <h1 class="article-title">{{ reports.fields.title }}</h1>
+            <h2 class="article-subtitle">{{ reports.fields.subtitle }}</h2>
+            <p class="article-meta">{{ reports.fields.metainfo }}</p>
+            <p>{{ reports.fields.publicationdate }}</p>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content-wrapper">
+        <!-- Author Section -->
+        <div class="printable-content">
+            <!-- Your actual document content goes here -->
+        </div>
+        <div class="author-section">
+            <div class="action-buttons">
+                <button class="btn-action" (click)="shareContent()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                        <polyline points="16 6 12 2 8 6"></polyline>
+                        <line x1="12" y1="2" x2="12" y2="15"></line>
+                    </svg>
+                    {{ reports.fields.btn1 }}
+                </button>
+                <button class="btn-action" (click)="printContent()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    {{ reports.fields.btn2 }}
+                </button>
+                <button class="btn-action" (click)="downloadContent()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    {{ reports.fields.btn3 }}
+                </button>
+                <!-- <button class="btn-action" (click)="saveContent()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Save
+                </button> -->
+            </div>
+
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Left Navigation -->
+            <nav class="side-nav">
+                <ul>
+                    <li class="nav-item" [class.active]="activeSection === 'introduction'">
+                        <a (click)="scrollToSection('introduction', $event)">{{ reports.fields.navitem1 }}</a>
+                    </li>
+                    <li class="nav-item" [class.active]="activeSection === 'new-frontier'">
+                        <a (click)="scrollToSection('new-frontier', $event)">{{ reports.fields.navitem2 }}</a>
+                    </li>
+                    <li class="nav-item" [class.active]="activeSection === 'satellites-enable'">
+                        <a (click)="scrollToSection('satellites-enable', $event)">{{ reports.fields.navitem3 }}</a>
+                    </li>
+
+                    <li class="nav-item" [class.active]="activeSection === 'adoption'">
+                        <a (click)="scrollToSection('adoption', $event)">{{ reports.fields.navitem4 }}</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <section id="introduction" class="content-section">
+                    <h2>{{ reports.fields.navitem1head }}</h2>
+                    <p>
+                        <strong style="color: cadetblue;">Satellite technology is no longer the domain
+                            of large government agencies</strong> {{reports.fields.section1}}
+                    </p>
+                </section>
+
+                <section id="new-frontier" class="content-section">
+                    <h2>{{ reports.fields.navitem2head }}</h2>
+                    <p class="para">In the 2000s, satellite capabilities were limited. Earth Observation (EO) satellites
+                        offered only
+                        basic imagery, GPS accuracy was in the tens of meters, and Satcom bandwidth was narrow and
+                        inconsistent. The costs of satellite services were prohibitively high, with few players
+                        dominating the industry.</p>
+
+                    <p class="para">Complex infrastructure and specialized expertise were required to process the data,
+                        creating
+                        significant barriers to entry for many public bodies.</p>
+
+                    <div class="highlight-box">
+                        <h3 class="keyHead">Key Advancement</h3>
+                        <p class="para">Today, advancements in technology and the entry of private players have
+                            transformed the
+                            landscape. Modern satellites provide high-resolution imagery (enough to count the players on
+                            a cricket field), precise positioning better than 1 meter, and reliable global coverage.
+                            Large constellations ensure continuous monitoring and connectivity, enabling governments to
+                            access real-time data for critical applications. Costs have also fallen dramatically, making
+                            satellite services accessible to a broader range of users. Cloud-based systems and automated
+                            platforms have further simplified data processing, unlocking the potential for seamless
+                            integration into public sector operations.</p>
+                    </div>
+                    <p class="para">
+                        The shift from a government-dominated space sector to one that incorporates private innovation
+                        is driving this transformation. "Space Data-as-a-Service" models are now enabling governments to
+                        access satellite data that is affordable, customizable, and regular. The space economy is
+                        expected to grow to $1.8 trillion by 2035, and private companies are delivering high-quality
+                        data directly to their customers, ensuring that even smaller nations and sectors can benefit.
+                    </p>
+                    <img src="../../assets/images/reportnew.png" class="reportImage" />
+                    <p class="para">
+                        With these advancements, satellite technology has become the backbone of modern
+                        governance—enabling global connectivity, precise positioning, and reliable observation. It
+                        empowers public bodies to make informed decisions, deliver essential services, and transform
+                        their operations for the benefit of citizens worldwide.
+                    </p>
+                </section>
+
+                <section id="satellites-enable" class="content-section">
+                    <h2>{{ reports.fields.navitem3head }}</h2>
+                    <p class="para">Satellite technology empowers governments to build resilience, improve oversight,
+                        and foster
+                        transformation across public services.</p>
+                    <img src="../../assets/images/report2.png" class="reportImage" style="border: 2px solid #111;" />
+
+                    <div class="bulleted-list">
+                        <h3>Strengthening Oversight</h3>
+                        <p class="para">Every government has a mandate to monitor and manage vast areas effectively.
+                            Satellite
+                            technology offers advanced solutions for oversight by providing real-time data and
+                            predictive insights. From identifying illegal land encroachments and monitoring
+                            deforestation to enhancing urban planning, satellite-enabled systems ensure compliance and
+                            efficiency in public administration. In public safety, automated anomaly detection and
+                            geospatial tools help secure critical infrastructure and respond rapidly to emerging
+                            threats.</p>
+                    </div>
+
+                    <div class="bulleted-list">
+                        <h3>Resilience Against Emerging Threats</h3>
+                        <p class="para">Satellite technology helps to ensure preparedness for natural disasters, supply
+                            chain
+                            disruptions, and health crises. By amalgamating weather monitoring, environmental analysis,
+                            and AI, governments can predict vulnerabilities such as flooding, disease outbreaks, and
+                            resource scarcity. During emergencies, satellite communication ensures connectivity in
+                            remote or disaster-prone areas, enabling rapid response and recovery efforts.</p>
+                    </div>
+
+                    <div class="bulleted-list">
+                        <h3>Fostering Balance</h3>
+                        <p class="para">Governments can leverage satellite data to harmonize economic growth with
+                            environmental
+                            sustainability. Advanced systems provide precision analytics for supply chain optimization,
+                            sustainable agriculture, and resource management. By monitoring crop health, identifying
+                            irrigation needs, and tracking environmental impacts, governments can ensure the equitable
+                            use of resources while protecting ecosystems and meeting climate goals.</p>
+                    </div>
+                    <div class="bulleted-list">
+                        <h3>Deciding with Incisiveness </h3>
+                        <p class="para">Satellite technology elevates the quality and precision of decision-making
+                            across domains that
+                            demand nuanced insights. In banking and finance, satellite-driven analytics assess
+                            agricultural
+                            risks, stabilize commodity prices, and accelerate insurance claims after disasters.
+                            For environmental protection, customized monitoring helps detect illegal activities like
+                            deforestation
+                            or unregulated mining, ensuring regulatory compliance and ecosystem preservation.
+                            In border and maritime security, persistent satellite surveillance prevents unauthorized
+                            activities like smuggling and illegal fishing, even under adverse conditions. </p>
+                    </div>
+                    <div class="bulleted-list">
+                        <h3>Driving Transformation </h3>
+                        <p class="para">Satellite technology is at the heart of transformative governance, offering
+                            innovative solutions across taxation, logistics, and public services. By utilizing satellite
+                            imagery, governments can maintain accurate property records, streamline tax collection, and
+                            minimize revenue losses due to evasion. In transportation, satellites optimize traffic flow,
+                            reduce congestion, and enable efficient freight movement, significantly improving mobility
+                            in urban areas. In healthcare, satellite connectivity supports telemedicine, bridging gaps
+                            in remote and underserved regions. For instance, doctors in urban centers can provide
+                            real-time consultations and diagnostics to remote patients, ensuring equitable access to
+                            quality healthcare. </p>
+                    </div>
+                    <img src="../../assets/images/report3.png" class="reportImage" />
+                </section>
+
+
+
+                <section id="adoption" class="content-section">
+                    <h2>{{ reports.fields.navitem4head }}</h2>
+                    <p class="para">Following a structured pathway that balances technological readiness, economic
+                        feasibility, and
+                        policy alignment can help governments and public sector organisations to meaningfully integrate
+                        satellite technology into their operations. This pathway progresses from leveraging basic data
+                        services to achieving self-sufficiency with advanced satellite constellations.</p>
+
+                    <div class="highlight-box">
+                        <h3 class="keyHead">Stages of Downstream Utilization</h3>
+                        <p class="para">A well-functioning downstream ecosystem supports value creation by enhancing
+                            data access,
+                            catalyzing innovation, and driving infrastructure investments. Governments typically follow
+                            three stages of adoption:</p>
+                        <ul>
+                            <li><strong>Low to Medium Adoption:</strong> Focus on “Space Data as a Service,” enabling
+                                access to satellite data for foundational use cases like monitoring and visualization.
+                                Partnerships are crucial at this stage to manage data acquisition and analysis.</li>
+                            <li><strong>Medium to High Adoption:</strong> Transition to “Space Insights as a Service,”
+                                where data is transformed into actionable insights for decision-making. Governments
+                                integrate satellite data into existing systems, often co-creating solutions with
+                                startups and enterprises.</li>
+                            <li><strong>High Adoption:</strong> Achieve “Space Constellation as a Service,” establishing
+                                indigenous capabilities for satellite development, data generation, and long-term
+                                sustainability. This stage reflects a shift toward self-sufficiency.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3 class="keyHead">Maximizing Impact</h3>
+                        <p class="para">Governments must align their adoption strategies across multiple levels of
+                            governance to
+                            maximize impact:</p>
+                        <ul>
+                            <li><strong>People:</strong> Build national expertise through training programs, research
+                                institutions, and local upskilling initiatives.</li>
+                            <li><strong>Technology:</strong> Invest in national satellite constellations, integrate
+                                tools like GIS platforms to strengthen decision-making capabilities, and explore best
+                                practices in the processing and sharing of open-data and insights to all stakeholders.
+                            </li>
+                            <li><strong>Finance:</strong> Allocate budgets to satellite technology, establish R&D
+                                partnerships, and explore innovative financing models.</li>
+                            <li><strong>Process:</strong> Embed satellite solutions into existing workflows and track
+                                their impact through sector-specific KPIs.</li>
+                            <li><strong>Partnerships:</strong> Foster collaborations with industries, academic
+                                institutions, and international space organizations to co-create scalable solutions.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="stats-bar">
+                            <div class="stat-group left-group">
+                                <div class="stat-title left-title">
+                                    Potential yearly value-added by EO data to all industries by 2030
+                                </div>
+                                <div class="stat-circle green-circle">
+                                    <div class="stat-value">$703</div>
+                                    <div class="stat-unit">bn</div>
+                                </div>
+                            </div>
+                            <div class="stat-group right-group">
+                                <div class="stat-title right-title">
+                                    Potential yearly value-added by EO data to GPS by 2030
+                                </div>
+                                <div class="stat-circle blue-circle">
+                                    <div class="stat-value">$47</div>
+                                    <div class="stat-unit">bn</div>
+                                </div>
+                            </div>
+                            <!-- Add the connector elements here -->
+                            <div class="connector top-connector"></div>
+                            <div class="connector bottom-connector"></div>
+                        </div>
+                        <div class="source">Source: Deloitte WEF report</div>
+                    </div>
+                    
+                    
+                </section>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="download-box">
+                  <h3>Downloads</h3>
+                  <div class="download-card">
+                    <img src="../../assets/images/obj1.jpg" alt="Report thumbnail">
+                    <h4>Executive Summary</h4>
+                    <p class="para">Download our comprehensive report on NewSpace and public service delivery</p>
+                    <button (click)="downloadContent()" class="download-link">Download PDF</button>
+                  </div>
+                  <div class="contact-box">
+                    <h4>Get in Touch</h4>
+                    <p>Interested in learning more about our services?</p>
+                    <a href="#team" class="contact-btn">Contact Us</a>
+                  </div>
+                </div>
+              </aside>
+        </div>
+    </div>
+</div>

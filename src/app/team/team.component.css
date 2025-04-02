@@ -1,146 +1,147 @@
-.container-fluid{
-    /* background-color: black; */
-
-    height: 430px;
-    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+.team-container {
+  padding: 40px 20px;
+  max-width: 1900px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
-h5{
-    color: black;
-    padding-top: 2%;
-    /* padding-left: 5%; */
+.team-title {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 40px;
 }
 
-  .card {
-    position: relative;
-    display: block;
-    height: 100%;
-    border-radius: calc(var(--curve) * 1px);
-    overflow: hidden;
-    text-decoration: none;
-    color: white;
-    border: none;
-  }
-  
-  .card__image {
-    width: 100%;
-    height: 300px;
-  }
-  
-  .card__overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    border-radius: calc(var(--curve) * 1px);
-    /* background-color: var(--surface-color); */
-    transform: translateY(100%);
-    transition: 0.2s ease-in-out;
-    background-color: black;
-    
-  }
-  
-  .card:hover .card__overlay {
-    transform: translateY(0);
-  }
-  
-  .card__header {
-    position: relative;
-    display: flex;
+.member-header {
+ display: flex;
+ justify-content: space-between;
+
+}
+.team-grid {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: #fff;
+  /* border-radiu s: 8px; */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.member-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f0f0f0;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-details {
+  flex-grow: 1;
+}
+
+.member-name {
+  font-size: 1.25rem;
+  color: #0076a8; /* Deloitte blue */
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.member-title {
+  font-size: 1rem;
+  color: #111;
+  margin: 0 0 10px 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+  color: #0076a8;
+}
+
+.contact-item i {
+  font-size: 1rem;
+  color: #0076a8;
+}
+
+.social-links {
+  margin: 15px 0;
+}
+
+.linkedin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #0076a8;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  background: #005a80;
+}
+
+.member-description {
+  font-size: 1rem;
+  color: #111;
+  margin: 15px 0 0 0;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    border-radius: calc(var(--curve) * 1px) 0 0 0;
-    background-color: var(--surface-color);
-    padding: 2em;
-    transform: translateY(-100%);
-    transition: 0.2s ease-in-out;
+    text-align: center;
   }
-  
-  .card__arc {
-    width: 5em;
-    height: 5em;
-    position: absolute;
-    bottom: 100%;
-    right: 0;
-    z-index: 1;
-  }
-  
-  .card__arc path {
-    fill: var(--surface-color);
-  }
-  
-  .card:hover .card__header {
-    transform: translateY(0);
-  }
-  
-  .card__thumb {
-    flex-shrink: 0;
-    width: 3.125em;
-    height: 3.125em;
-    border-radius: 50%;
-  }
-  
-  .card__title {
-    font-size: 1em;
-    margin: 0 0 0.3em;
-  }
-  
-  .card__status {
-    font-size: 0.8em;
-  }
-  
-  .card__description {
-    padding: 0 2em 2em;
-    margin: 0;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-  
 
-
-  @media (max-width: 768px) {
-    .container-fluid {
-      height: auto; /* Set height to auto for flexible height */
-      padding-bottom: 20px; /* Add padding at the bottom for spacing */
-    }
-  
-    .col-sm-3 {
-      padding-top: 0; /* Remove top padding for columns */
-      margin-bottom: 20px; /* Add margin at the bottom for spacing */
-    }
-  
-    .card__image {
-      height: auto; /* Set height to auto for flexible height */
-    }
-  
-    .card__overlay {
-      bottom: -100%; /* Reset bottom position for overlay */
-      transform: translateY(0); /* Reset transform for overlay */
-      transition: none; /* Remove transition for overlay */
-      background-color: black; /* Change overlay background color */
-    }
-  
-    .card:hover .card__overlay {
-      bottom: 0; /* Move overlay up on hover */
-    }
-  
-    .card__header {
-      transform: translateY(0); /* Reset transform for header */
-      transition: none; /* Remove transition for header */
-    }
-  
-    .card:hover .card__header {
-      transform: translateY(0); /* Move header up on hover */
-    }
-  
-    .card__description {
-      padding: 0 1em 1em; /* Adjust padding for smaller screens */
-    }
-    h5,h3,p{
-      font-size: 100%;
-    }
+  .member-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
   }
-  
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

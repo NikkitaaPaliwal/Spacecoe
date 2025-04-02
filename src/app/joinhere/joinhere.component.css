@@ -1,0 +1,98 @@
+/* Section Styling */
+.join-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f0f4f7, #ffffff); /* Light gradient */
+    color: #333333;
+  }
+  
+  /* Container Styling */
+  .join-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    max-width: 1200px;
+    width: 100%;
+    background: white;
+    /* border-radius: 12px; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensures image and form fit neatly */
+  }
+  
+  /* Image Section */
+  .join-image-container {
+    flex: 1 1 50%; /* 50% of the width */
+    min-width: 300px; /* Prevents collapsing */
+    max-height: 100%; /* Ensures the image doesn't overflow */
+  }
+  
+  .join-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers its container */
+  }
+  
+  /* Form Section */
+  .join-form-container {
+    flex: 1 1 50%; /* 50% of the width */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .join-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #009a44; /* Deloitte green */
+  }
+  
+  .join-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #555555; /* Medium gray for description text */
+  }
+  
+  .join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-input {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #cccccc; /* Light gray border */
+    /* border-radius: 8px; */
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #009a44;
+    box-shadow: 0 0 8px rgba(0, 122, 51, 0.2);
+  }
+  
+  .join-button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #009a44;
+    border: none;
+    /* border-radius: 8px; */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .join-button:hover {
+    background-color: #009a44;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  

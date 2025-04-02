@@ -22,6 +22,7 @@ export class StartupComponent implements OnInit, AfterViewInit{
   constructor(private urlService: UrlService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+   
     this.route.params.subscribe(params => {
       const headline = params['headline'];
       console.log('Headline:', headline); // Log the received headline

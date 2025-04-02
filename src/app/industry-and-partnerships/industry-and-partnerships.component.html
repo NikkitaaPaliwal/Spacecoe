@@ -14,14 +14,14 @@
 
 
 <div class="container-fluid">
-  <!-- <h3>Industry And Partnerships</h3> -->
   <div *ngFor="let industry of industries" [id]="generateId(industry.fields.headline)">
-    <h4>{{ industry.fields.heading }}</h4>
-    <h3 class="headline">{{ industry.fields.headline }}  | <em class="date"><strong></strong> {{ industry.fields.date }}</em></h3>
-    <p>{{ industry.fields.country }}</p>
+    <h4 class="heading">{{ industry.fields.heading }}</h4>
+    <h3 class="headline">{{ industry.fields.headline }}</h3>
+    <p class="date"><strong>Date:</strong> {{ industry.fields.date }}</p>
+    <p class="country"><strong>Country:</strong> {{ industry.fields.country }}</p>
     <p class="detail">{{ industry.fields.detail }}</p>
-    <p class="impact">{{ industry.fields.impact }}</p><br>
-    <!-- <a class="read-more" [href]="industry.fields.link" target="_blank">Read more</a> -->
+    <p class="impact"><strong>Impact:</strong> {{ industry.fields.impact }}</p>
     <p class="contact"><strong>Contact:</strong> {{ industry.fields.contact }}</p>
   </div>
 </div>
+

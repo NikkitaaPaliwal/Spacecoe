@@ -1,0 +1,228 @@
+.space-news-container {
+  padding: 40px 20px;
+  background-color: #19252e; 
+  font-family: 'Arial', sans-serif;
+  color: #1c1c1c; 
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  min-width: 1700px;
+}
+
+.space-news-header {
+  margin-bottom: 30px;
+}
+
+.news-title {
+  font-size: 3.5rem;
+  font-family: system-ui;
+  margin-bottom: 20px;
+  /* font-weight: 300; */
+  color: #fff; 
+}
+
+.news-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.news-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+  align-items: stretch; 
+}
+
+.news-card {
+  background: #ffffff; 
+  border: 1px solid #e0e0e0; 
+  text-align: left;
+  width: 420px; 
+  height: 400px; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; 
+  padding: 10px;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.news-image {
+  width: 100%;
+  height: 150px; 
+  object-fit: cover; 
+  display: block;
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+.news-headline {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1b1b38;
+  margin: 15px 10px 10px;
+  flex-grow: 1; 
+}
+
+.news-snippet {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.news-link {
+  font-size: 0.95rem;
+  color: #4a90e2; 
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 0 10px 10px;
+  margin-top: auto;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
+.newsletter-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 50px 20px;  /* Increased padding for better spacing */
+  background:  #19252e;  /* Gradient background */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Enhanced shadow for depth */
+  text-align: center;
+  color: #ffffff;  /* Ensuring text is white for better readability */
+}
+
+.newsletter-title {
+  font-size: 2.5rem;  /* Slightly larger to catch attention */
+  font-weight: bold;  /* Bolder font weight for emphasis */
+  margin-bottom: 20px;  /* Increased spacing below title */
+}
+
+.newsletter-description {
+  font-size: 1.2rem;  /* Larger font size for better readability */
+  color: #ccc;  /* Lighter gray color for soft contrast */
+  margin-bottom: 30px;  /* More space before the form */
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;  /* Increased gap for better spacing */
+  flex-wrap: wrap;  /* Ensures responsiveness */
+}
+
+.newsletter-input {
+  padding: 15px 20px;
+  font-size: 1.1rem;  /* Larger font size for ease of reading */
+  background: rgba(255, 255, 255, 0.1);  /* Subtle background to fit theme */
+  color: #fff;  /* White text */
+  width: 43%;
+}
+
+.newsletter-input::placeholder {
+  color: #bbb;  /* Lighter placeholder text */
+}
+
+.newsletter-button {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  background: #4a90e2;  /* Consistent brand color */
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background: #367bcf;  /* Slightly darker on hover for visual feedback */
+}
+
+@media screen and (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-input {
+    width: 80%;  /* Full width in mobile for easy access */
+    margin-bottom: 20px;  /* Spacing between elements in mobile */
+  }
+}
+
+/* Additional Responsive Modifications */
+
+/* Allow the container to shrink on screens narrower than 1700px */
+@media screen and (max-width: 1700px) {
+  .space-news-container {
+    min-width: auto;
+    width: 100%;
+    padding: 40px 20px;
+  }
+}
+
+/* Adjust card dimensions and text sizes on medium screens */
+@media screen and (max-width: 1200px) {
+  .news-card {
+    width: 90%;
+    height: auto; /* Let height adjust based on content */
+    margin: 0 auto;
+  }
+  .news-image {
+    height: 120px;
+  }
+  .news-title {
+    font-size: 3rem;
+  }
+  .news-description {
+    font-size: 1rem;
+  }
+}
+
+/* Further adjustments for small screens */
+@media screen and (max-width: 768px) {
+  .news-card {
+    width: 100%;
+    height: auto;
+  }
+  .news-title {
+    font-size: 2.5rem;
+  }
+  .news-headline {
+    font-size: 1rem;
+    margin: 10px;
+  }
+  .news-snippet {
+    font-size: 0.9rem;
+    margin: 10px;
+  }
+}
+
+/* Fine-tuning for extra-small screens */
+@media screen and (max-width: 480px) {
+  .news-title {
+    font-size: 2rem;
+  }
+  .news-headline {
+    font-size: 0.9rem;
+  }
+  .news-snippet {
+    font-size: 0.8rem;
+  }
+  .newsletter-title {
+    font-size: 2rem;
+  }
+  .newsletter-description {
+    font-size: 1rem;
+  }
+}

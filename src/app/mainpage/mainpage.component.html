@@ -1,8 +1,36 @@
-<!-- <app-header ngSkipHydration></app-header> -->
-<app-home></app-home>
-<app-casestudies></app-casestudies>
-<app-video></app-video>
-<app-article ngSkipHydration></app-article>
-<app-team></app-team>
-<app-service></app-service>
-<!-- <app-footer ngSkipHydration></app-footer> -->
+<div class="page-wrapper">
+    <app-header ngSkipHydration></app-header>
+    
+    <main class="main-content">
+      <app-home></app-home>
+      
+      <section class="section-container">
+        <app-casestudies></app-casestudies>
+      </section>
+      
+      <!-- <section class="section-container">
+        <app-video></app-video>
+      </section> -->
+      
+      <section class="section-container">
+        <app-reports ngSkipHydration></app-reports>
+      </section>
+      <section class="section-container">
+        <app-podcasts ngSkipHydration></app-podcasts>
+      </section>
+      
+      <!-- <section class="section-container">
+        <app-article ></app-article>
+      </section> -->
+      
+      <section class="section-container">
+        <app-team  id="team"></app-team>
+      </section>
+      
+      <section class="section-container">
+        <app-service></app-service>
+      </section>
+    </main>
+    
+    <app-footer ngSkipHydration ></app-footer>
+  </div>

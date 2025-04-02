@@ -51,56 +51,107 @@ color: white;
     text-decoration: underline;
 }
 .container-fluid {
-    display: flex;
-    justify-content: center;
+    display: block;
     background-color: black;
     font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
     margin-top: -22px;
+    padding: 20px;
+}
 
-    height: 1150px;
+.row {
+    margin-bottom: 20px;
+    justify-content: center;
+    display: flex   ;
 }
+
+.heading {
+    color: #1c1c1c;
+    height: 90px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* padding-left: 20px; */
+    background-color: #d0d0ce;
+}
+
 .card {
-    width: 370px;
-    height: 340px;
-    margin: 10px; 
+    width: 450px;
+    height: auto;
+    margin: 10px;
     border: none;
+    border-radius: 0;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: left;
+    /* text-align: center; */
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .card-img-top {
-    height: 200px;
+    height: 150px;
     width: 100%;
     object-fit: cover;
 }
-.col-sm-4 {
-    text-align: center;
-}
-.heading {
-    color: white;
-    font-size: 18px;
+
+.author-date-container {
+    display: flex;
+    /* align-items: center; */
+    justify-content: left;  /* Centers the content horizontally */
+    gap: 8px;
+    margin-top: 15px;
+    /* padding: 0 15px; */
+    font-size: 14px;
+    width: 100%;  /* Ensures the container takes full width */
 }
 
+.date {
+    font-weight: bold
+}
+
+.separator {
+    color: #666;
+}
+
+.author {
+    font-weight: bold;
+}
 
 @media (max-width: 768px) {
     .container-fluid {
-      flex-direction: column; /* Change flex direction to stack cards vertically */
-      align-items: center; /* Center align content */
-      height: auto; /* Auto height */
-      padding: 20px; /* Add padding for spacing */
+      padding: 10px;
     }
     
-    .card {
-      width: 80%; /* Adjust width to fit smaller screens */
-      height: auto; /* Set height to auto for flexible height */
-      margin: 10px auto; /* Center cards and add spacing */
+    .row {
+      flex-direction: column;
     }
-    
-    .col-sm-4 {
-      text-align: center; /* Center align column content */
-    }
-    
-    .heading {
-      font-size: 100%; /* Adjust heading font size for smaller screens */
-    }
-  }
-  
 
+    .col-sm-2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .col-sm-10 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      width: 80%;
+      height: auto;
+    }
+}

@@ -19,12 +19,28 @@ import { CompetitorComponent } from './competitor/competitor.component';
 import { OtherEventComponent } from './other-event/other-event.component';
 import { StaSciTechAdvancementComponent } from './sta-sci-tech-advancement/sta-sci-tech-advancement.component';
 import { PolicyRegulationChangeComponent } from './policy-regulation-change/policy-regulation-change.component';
+import { SpacecircleComponent } from './spacecircle/spacecircle.component';
+import { GuildComponent } from './guild/guild.component';
+import { ReportsComponent } from './reports/reports.component';
+import { PublicationsComponent } from './publications/publications.component';
+import { SolutionsComponent } from './solutions/solutions.component';
+import { GuildPageComponent } from './guildPage/guildPage.component';
+import { GuildStart } from './guildStart/guildStart.component';
+import { GlobeComponent } from './globe/globe.component';
+import { PodcastsComponents } from './podacasts/podcasts.component';
 
 
 export const routes: Routes = [
     { path: '', redirectTo: 'mainpage', pathMatch: 'full' },
     {path:'mainpage',component:MainpageComponent},
+    {path: 'reports', component: ReportsComponent },
+    { path: 'publications', component: PublicationsComponent },
+    { path: 'podcasts', component: PodcastsComponents },
+    { path: 'solutions', component: SolutionsComponent },
+    { path: 'globe', component: GlobeComponent },
     {path: 'header', component: HeaderComponent},
+    {path: 'guildpage', component: GuildPageComponent },
+    {path: 'guildStart', component: GuildStart },
     {path: 'home', component: HomeComponent},
     {path: 'service', component: ServiceComponent},
     {path: 'video', component: VideoComponent},
@@ -52,6 +68,8 @@ export const routes: Routes = [
     { path: 'scitechadvancement/:headline', component: StaSciTechAdvancementComponent },
     {path:'policyandregulationchange', component: PolicyRegulationChangeComponent},
     { path: 'policyandregulationchange/:headline', component: PolicyRegulationChangeComponent},
+    {path:'spacecircle', component: SpacecircleComponent},
+    {path:'guild', component: GuildComponent},
     { path: '**', redirectTo: '', pathMatch: 'full' }
     
 ]; 

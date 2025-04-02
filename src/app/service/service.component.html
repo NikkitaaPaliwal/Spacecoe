@@ -94,7 +94,7 @@
             <div class="col-sm">
               <div class="card">
                 <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl']" />
-                <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="servicebox position-absolute top-50 start-50 translate-middle">
                   <p class="m-0 text-white">{{ service.fields['service'] }}</p>
                 </div>
               </div>
@@ -102,7 +102,7 @@
             <div class="col-sm">
               <div class="card">
                 <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl1']" />
-                <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="servicebox position-absolute top-50 start-50 translate-middle">
                   <p class="m-0 text-white">{{ service.fields['service1'] }}</p>
                 </div>
               </div>
@@ -110,8 +110,16 @@
             <div class="col-sm">
               <div class="card">
                 <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl2']" />
-                <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="servicebox position-absolute top-50 start-50 translate-middle">
                   <p class="m-0 text-white">{{ service.fields['service2'] }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <img class="img-fluid zoom" alt="100%x280" [src]="service.fields['imgurl3']" />
+                <div class="servicebox position-absolute top-50 start-50 translate-middle">
+                  <p class="m-0 text-white">{{ service.fields['service3'] }}</p>
                 </div>
               </div>
             </div>
@@ -119,14 +127,14 @@
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#combinedCarousel" data-bs-slide="prev">
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#combinedCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#combinedCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
-    </button>
+    </button> -->
   </div>
 </div>
 

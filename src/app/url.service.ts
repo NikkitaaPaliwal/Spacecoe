@@ -169,5 +169,41 @@ export class UrlService {
       return response.items;
     });
   }
+
+  getReportsummary(): Promise<any[]> {
+    return this.client.getEntries({
+      content_type: 'reportSummary'
+    }).then(response => {
+      // console.log('Industry entries:', response.items); 
+      return response.items;
+    });
+  }
+
+  getTabs(): Promise<any[]> {
+    return this.client.getEntries({
+      content_type: 'tabs'
+    }).then(response => {
+      // console.log('Industry entries:', response.items); 
+      return response.items;
+    });
+  }
+
+  getMainPageReport(): Promise<any[]> {
+    return this.client.getEntries({
+      content_type: 'getmainpagereport'
+    }).then(response => {
+      // console.log('Industry entries:', response.items); 
+      return response.items;
+    });
+  }
   
+  getPolicyUpdate(): Promise<any[]> {
+    return this.client.getEntries({
+      content_type: 'getPolicyUpdate'
+    }).then(response => {
+      // console.log('Industry entries:', response.items); 
+      return response.items;
+    });
+  }
+
   }

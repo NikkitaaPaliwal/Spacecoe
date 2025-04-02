@@ -1,0 +1,108 @@
+/* Global Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Podcast Section */
+.podcast-container {
+  width: 100%;
+  max-width: 1800px; /* Keeping the previous width */
+  margin: 40px auto;
+  padding: 40px 20px;
+  background: #121212;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  text-align: left; /* Changed from center to left */
+}
+
+/* Header Styling */
+.podcast-header h5 {
+  font-size: 3.5rem;
+  /* font-weight: bold; */
+  color: #00abab;
+  margin-bottom: 10px;
+}
+
+.podcast-header p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* Podcast Content */
+.podcast-content {
+  display: flex;
+  justify-content: flex-start; /* Aligns everything to the left */
+  flex-wrap: wrap;
+}
+
+/* Podcast Card */
+.podcast-card {
+  width: 100%; /* Only one podcast visible at a time */
+  max-width: 1600px; /* Keeps a sleek look */
+  background: #1c1c1c;
+  padding: 25px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 170, 255, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.podcast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 170, 255, 0.3);
+}
+
+/* Audio Episode */
+.podcast-audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00abab;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.play-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.play-icon:hover {
+  color: #fff;
+}
+
+/* Podcast Description */
+.podcast-desc {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin: 15px 0;
+}
+
+/* Listen Now Button */
+.podcast-btn {
+  background: #0d8390;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.podcast-btn:hover {
+  font-size: 1.2rem;
+  padding: 13px 28px;
+  transition: background 0.3s ease-in-out;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .podcast-card {
+      width: 100%;
+      max-width: 100%;
+  }
+}

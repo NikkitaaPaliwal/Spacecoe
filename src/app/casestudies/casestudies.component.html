@@ -246,76 +246,68 @@
         </div>
       </div> -->
 
-
-
-
-
-
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-4" *ngIf="industryreports">
-            <p class="heading">Industry Reports</p>
+        <div class="row align-items-center" *ngIf="industryreports">
+          <div class="col-sm-2">
+            <p class="heading headingFont">Industry Reports</p>
+          </div>
+          <div class="col-sm-10 d-flex flex-wrap">
             <div class="card" *ngFor="let report of industryreports">
-              <img class="card-img-top" [src]="report.fields['imgurl']" alt="Card image">
               <div class="card-body">
+                <img class="card-img-top" [src]="report.fields['imgurl']" alt="Card image">
                 <h6 class="card-title">{{ report.fields['tittle'] }}</h6>
-                <p class="card-text"><a [href]="report.fields['url']">{{ report.fields['urltext'] }}</a>.</p>
-                <div class="row">
-                  <div class="col-sm-5">
-                    <p>{{ report.fields['date'] }}  |</p>
-                  </div>
-                  <div class="col-sm-7">
-                     <b><p>{{ report.fields['author'] }}</p></b>
-                  </div>
-                </div>
+                <p class="card-text"><a [href]="report.fields['url']">{{ report.fields['urltext'] }}</a></p>
+                <!-- <div class="author-date-container">
+                  <span class="date">{{ report.fields['date'] }}</span>
+                  <span class="separator">|</span>
+                  <span class="author">{{ report.fields['author'] }}</span>
+              </div> -->
               </div>
             </div>
           </div>
-        
+        </div>
       
-          <div class="col-sm-4" *ngIf="deloitteassets">
-            <p class="heading">Deloitte Assets</p>
+        <div class="row align-items-center" *ngIf="deloitteassets">
+          <div class="col-sm-2">
+            <p class="heading headingFont">Deloitte Assets</p>
+          </div>
+          <div class="col-sm-10 d-flex flex-wrap">
             <div class="card" *ngFor="let deloitte of deloitteassets">
-              <img class="card-img-top" [src]="deloitte.fields['imgurl']" alt="Card image">
               <div class="card-body">
+                <img class="card-img-top" [src]="deloitte.fields['imgurl']" alt="Card image">
                 <h6 class="card-title">{{ deloitte.fields['tittle'] }}</h6>
-                <p class="card-text"><a [href]="deloitte.fields['url']">{{ deloitte.fields['urltittle'] }}</a>.</p>
-                <div class="row">
-                  <div class="col-sm-5">
-                    <p>{{ deloitte.fields['date'] }}  |</p>
-                  </div>
-                  <div class="col-sm-7">
-                     <b><p>{{ deloitte.fields['author'] }}</p></b>
-                  </div>
-                </div>
+                <p class="card-text"><a [href]="deloitte.fields['url']">{{ deloitte.fields['urltittle'] }}</a></p>
+                <!-- <div class="author-date-container">
+                  <span class="date">{{ deloitte.fields['date'] }}</span>
+                  <span class="separator"></span>
+                  <span class="author">{{ deloitte.fields['author'] }}</span>
+              </div>  -->
               </div>
             </div>
           </div>
-    
-
-          <div class="col-sm-4" *ngIf="synergizeinitiatives">
-            <p class="heading">Synergize with On-going Deloitte Space Initiatives</p>
-            
+        </div>
+      
+        <div class="row align-items-center" *ngIf="synergizeinitiatives">
+          <div class="col-sm-2">
+            <p class="heading headingFont">Deloitte Initiatives</p>
+          </div>
+          <div class="col-sm-10 d-flex flex-wrap">
             <div class="card" *ngFor="let synergize of synergizeinitiatives">
-              <img class="card-img-top" [src]="synergize.fields['imgurl']" alt="Card image">
               <div class="card-body">
+                <img class="card-img-top" [src]="synergize.fields['imgurl']" alt="Card image">
                 <h6 class="card-title">{{ synergize.fields['tittle'] }}</h6>
-                <p class="card-text"><a [href]="synergize.fields['url']">{{ synergize.fields['urltittle'] }}</a>.</p>
-                <div class="row">
-                  <div class="col-sm-5">
-                    <p>{{ synergize.fields['date'] }}  |</p>
-                  </div>
-                  <div class="col-sm-7">
-                     <b><p>{{ synergize.fields['author'] }}</p></b>
-                  </div>
-                </div>
-              </div>
+                <p class="card-text"><a [href]="synergize.fields['url']">{{ synergize.fields['urltittle'] }}</a></p>
+                <!-- <div class="author-date-container">
+                  <span class="date">{{ synergize.fields['date'] }}</span>
+                  <span class="separator">|</span>
+                  <span class="author">{{ synergize.fields['author'] }}</span>
+              </div> -->
               </div>
             </div>
-        
-
+          </div>
         </div>
       </div>
       
-    
-   
+      
+      
+      

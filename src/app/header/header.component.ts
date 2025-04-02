@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UrlService } from '../url.service';
 import { CommonModule } from '@angular/common';
@@ -7,15 +7,15 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule,FormsModule
-    ,ReactiveFormsModule,CommonModule],
+  imports: [RouterModule, FormsModule
+    , ReactiveFormsModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 
 
-export class HeaderComponent implements OnInit{
-  
+export class HeaderComponent implements OnInit {
+
   // searchQuery: string = '';
   // showSuggestions: boolean = false;
   // suggestions: any[] = [];
@@ -96,16 +96,17 @@ export class HeaderComponent implements OnInit{
   //   return headline.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '');
   // }
 
-  
+  activeTab: string = '';
   searchQuery: string = '';
   showSuggestions: boolean = false;
   suggestions: any[] = [];
+  tabs: any[] = [];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private urlService: UrlService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -114,6 +115,10 @@ export class HeaderComponent implements OnInit{
         const path = this.isInvestmentHeadline(headline) ? 'investmentandfunding' : 'industryandpartnerships';
         this.router.navigate([`${path}/${headline}`]);
       }
+    });
+
+    this.urlService.getTabs().then(tabs => {
+      this.tabs = tabs;
     });
   }
 
@@ -128,9 +133,10 @@ export class HeaderComponent implements OnInit{
         this.urlService.getCompetitorEntries(),
         this.urlService.getOtherEventEntries(),
         this.urlService.getScitechadvancementEntries(),
-        this.urlService.getPolicyandregulationchangeEntries()
-      ]).then(([investmentEntries, industryEntries, otherEntries, startupEntries, competitorEntries, otherEventEntries, scitechadvancementEntries, policyregulationchangeEntries]) => {
-        const allEntries = [...investmentEntries, ...industryEntries, ...otherEntries, ...startupEntries, ...competitorEntries, ...otherEventEntries, ...scitechadvancementEntries, ...policyregulationchangeEntries];
+        this.urlService.getPolicyandregulationchangeEntries(),
+        this.urlService.getTabs()
+      ]).then(([investmentEntries, industryEntries, otherEntries, startupEntries, competitorEntries, otherEventEntries, scitechadvancementEntries, policyregulationchangeEntries, tabs]) => {
+        const allEntries = [...investmentEntries, ...industryEntries, ...otherEntries, ...startupEntries, ...competitorEntries, ...otherEventEntries, ...scitechadvancementEntries, ...policyregulationchangeEntries, ...tabs];
         this.suggestions = allEntries.map(entry => {
           const match = this.checkEntryForMatch(entry);
           return match ? { ...entry, snippet: match.snippet } : null;
@@ -162,6 +168,25 @@ export class HeaderComponent implements OnInit{
       const path = this.isInvestmentType(entry) ? 'investmentandfunding' : 'industryandpartnerships';
       this.router.navigate([`${path}/${headline}`], { queryParams });
     }
+  }
+
+  navigateTo(section: string): void {
+    // Navigate to the route based on the section argument
+    this.activeTab = section;
+    this.router.navigate([section]);
+  }
+
+  scrollToTeam(): void {
+    this.activeTab = 'team';
+    this.router.navigate(['/mainpage'], { fragment: 'team' });
+    const teamSection = document.getElementById('team');
+    if (teamSection) {
+      teamSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  scrollToMainpage(): void {
+    this.router.navigate(['/mainpage']);
   }
 
   isInvestmentType(entry: any): boolean {
@@ -197,7 +222,7 @@ export class HeaderComponent implements OnInit{
   }
 
   checkEntryForMatch(entry: any): { snippet: string } | null {
-    const fieldsToSearch = ['headline', 'detail', 'impact', 'link', 'contact', 'date', 'country', 'startupcapability', 'competitor', 'registrationfee','heading'];
+    const fieldsToSearch = ['headline', 'detail', 'impact', 'link', 'contact', 'date', 'country', 'startupcapability', 'competitor', 'registrationfee', 'heading'];
     for (const field of fieldsToSearch) {
       if (entry.fields[field] && entry.fields[field].toLowerCase().includes(this.searchQuery.toLowerCase())) {
         return {
@@ -219,4 +244,11 @@ export class HeaderComponent implements OnInit{
   generateId(headline: string): string {
     return headline.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '');
   }
+
+  isSearchVisible = false;
+
+  toggleSearch() {
+    this.isSearchVisible = !this.isSearchVisible;
+  }
+
 }

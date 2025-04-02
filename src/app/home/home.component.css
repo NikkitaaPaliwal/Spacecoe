@@ -1,48 +1,209 @@
-/* .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* General Carousel Styling */
+.carousel {
+  height: 111vh;
 }
-img{
-    background-image: cover;
+.carousel-inner {
+  height: 96%;
+}
+.carousel-item {
+  height: 96%;
+}
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 120%;
+  animation: continuousZoom 8s ease-in-out infinite;
+}
+/* .carousel-caption {
+  padding-bottom: 12%;
+  font-size: 2.5rem;
 } */
 
-.carousel {
-    height: 96vh; 
-  }
-  .carousel-inner {
-    height: 96%; 
-  }
-  .carousel-item {
-    height: 96%; 
-  }
+.carousel-caption {
+  text-align: center; /* Center-align the content */
+  bottom: 30%; /* Adjust the position of the caption */
+}
+
+.carousel-title {
+  font-size: 2.5rem; /* Adjust size as needed */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add spacing below the title */
+}
+
+.carousel-subtitle {
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: normal;
+  color: #ffffff; /* Optional: Add a lighter color for the description */
+  margin-top: 0; /* Ensure no extra margin above the subtitle */
+}
+
+.carousel-tabs .tab-link {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+  background-color: #007cb0;
+}
+
+.carousel-tabs .tab-link:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.carousel-tabs .tab-link:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.carousel-tabs .tab-link:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.carousel-tabs .tab-link:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+/* Styling for the Navigation Tabs */
+.carousel-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  /* gap: 15px; */
+  font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
+}
+
+h3 {
+  font-size: 3rem;
+  padding-bottom: 4%;
+  font-weight: 400;
+  justify-content: left !important;
+}
+
+.tab-link {
+  padding: 20px 30px;
+  /* border: 2px solid white; */
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.3rem;
+  width: 300px;
+  height: 90px;
+  /* border-radius: 10px; */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab-link:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.video-containermain {
+  bottom: 20%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
   .carousel-item img {
-    object-fit: cover; 
+    height: 100%;
     width: 100%;
-    height: 120%;
-  }
-  h3{
-    padding-bottom: 15%;
-  }
-  .container-fluid{
-    font-family: 'Open Sans', Calibri, Helvetica, sans-serif;
   }
 
+  .carousel-caption {
+    display: block !important;
+    font-size: 1.2rem !important;
+    bottom: 260px !important;
+  }
 
-  @media (max-width: 768px) {
-    .carousel-item img {
-      height: 100%; 
-      width: 100%;
-    }
-    
-    .carousel-caption {
-      display: block !important; /* Ensure the carousel caption is displayed */
-    }
-    
-    h3 {
-      font-size: 100%; 
-      padding-bottom: 40%;
-    }
-    
+  .carousel-tabs {
+    flex-direction: column;
+    gap: 10px;
+    bottom: 260px;
+  }
+
+  .carousel-control-next, .carousel-control-prev {
+    bottom: 45%;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    padding-bottom: 10%;
+  }
+
+  .tab-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Zoom effect */
+@keyframes continuousZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------- */
+/* Additional Responsive Modifications */
+/* --------------------------------------------- */
+
+/* Override the inline container height for medium screens */
+@media (max-width: 1024px) {
+  .container-fluid.p-0 {
+    height: 1000px !important;
+  }
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+  .container-fluid.p-0 {
+    height: 800px !important;
+  }
+}
+
+/* Extra-Small Screens adjustments */
+@media (max-width: 480px) {
+  .container-fluid.p-0 {
+    height: 600px !important;
   }
   
+  /* Adjust carousel height if needed */
+  .carousel {
+    height: 100vh;
+  }
+  
+  /* Reduce carousel caption font size and bottom padding */
+  .carousel-caption {
+    font-size: 1.2rem;
+    /* font-size: 1.4rem; */
+    bottom: 260px;
+    padding-bottom: 5%;
+  }
+  
+  /* Further adjust the navigation tab links */
+  .tab-link {
+    width: 250px;
+    height: 70px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}

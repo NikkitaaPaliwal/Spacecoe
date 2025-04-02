@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
@@ -18,5 +18,26 @@ import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class AutoComponent {
   
-  
+  // isPopupVisible = false;
+
+  // constructor(private cd: ChangeDetectorRef) {}
+
+  // togglePopup() {
+  //   this.isPopupVisible = !this.isPopupVisible;
+  //   this.cd.detectChanges(); // Trigger change detection
+  // }
+
+  isVisible = false;
+  currentPopup: string | null = null;
+
+  showPopup(type: string) {
+    this.currentPopup = type;
+    this.isVisible = true;
+  }
+
+  closePopup() {
+    this.isVisible = false;
+    this.currentPopup = null; // Reset the current popup
+  }
+
 }

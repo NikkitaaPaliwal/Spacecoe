@@ -13,11 +13,16 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022",
+    // "module": "ES2022",
+    
+
+    "module": "esnext",
     "useDefineForClassFields": false,
+    "strictPropertyInitialization": false,
     "lib": [
       "ES2022",
       "dom"

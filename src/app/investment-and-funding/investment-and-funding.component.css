@@ -1,76 +1,282 @@
-
+/* Base Container Styles */
 .container-fluid {
   padding: 20px;
-  background-color: black;
+  background-color: #1c1c1e;
   color: #FFFFFF;
   font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: backgroundFade 10s infinite;
 }
 
-.container-fluid h4 {
+.article {
+  background-color: #292929;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-body {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.article-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
-.container-fluid p {
-  margin-bottom: 5px;
+/* Background Fade Animation */
+@keyframes backgroundFade {
+  0% { background-color: #1c1c1e; }
+  50% { background-color: #333335; }
+  100% { background-color: #1c1c1e; }
 }
 
+/* Individual Investment Card Styles */
+.container-fluid div {
+  background-color: #2e2e30;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  overflow-wrap: break-word; /* Ensures long text wraps */
+  cursor: pointer;
+}
+
+.container-fluid div:hover {
+  transform: scale(1.02);
+}
+
+/* Writing Animation for Content */
+@keyframes writingAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.container-fluid h4,
+.container-fluid .headline,
+.container-fluid .detail,
+.container-fluid .impact,
+.container-fluid .contact {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: writingAnimation 2s steps(30, end) forwards;
+}
+
+/* Staggered Animation for Sequential Reveal */
+.container-fluid h4 {
+  animation-delay: 0.5s;
+}
+.container-fluid .headline {
+  animation-delay: 1s;
+}
+.container-fluid .detail {
+  animation-delay: 1.5s;
+}
+.container-fluid .impact {
+  animation-delay: 2s;
+}
+.container-fluid .contact {
+  animation-delay: 2.5s;
+}
+
+/* Typography and Spacing */
+.container-fluid h4 {
+  font-size: 1.5rem;
+  color: #00e676;
+  margin-bottom: 5px;
+  /* border-bottom: 1px solid #4f4f4f; */
+  padding-bottom: 5px;
+}
+
+.container-fluid .headline {
+  color: #ffeb3b;
+  font-size: 20px;
+  font-weight: bold;
+  overflow-wrap: break-word; /* Allows wrapping for smaller screens */
+}
+.country {
+  font-size: 1rem;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #bdbdbd;
+  font-style: italic;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container-fluid .detail,
+.container-fluid .impact,
+.container-fluid .contact {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+  overflow-wrap: break-word; /* Wrap text to fit container */
+}
+
+/* Specific Styling for Detail Text */
+.container-fluid .detail {
+  font-size: 16px;
+}
+
+.container-fluid .impact {
+  font-style: italic;
+  color: #90caf9;
+  /* padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.container-fluid .contact {
+  font-size: 14px;
+  font-weight: normal;
+  color: #dad5d5;
+}
+
+/* Read More Button */
 .read-more {
   display: inline-block;
-  padding: 5px 10px;
-  background-color:  #26890d;
+  padding: 8px 15px;
+  background-color: #26c6da;
   color: #fff;
   text-decoration: none;
-  border-radius: 3px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-  height: 25px;
-  font-size: small;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
+
 .read-more:hover {
-  
-  color: white;
+  background-color: #00acc1;
 }
 
-
-.impact {
-  font-style: italic;
-  color: rgb(210, 204, 204);
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  text-align: center;
+  color: #ffffff;
 }
 
-.headline {
+/* Spinner Animation */
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #26c6da;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* No Data Message */
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #a1a1a3;
   font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
-.date,.contact{
-font-size: smaller;
-font-weight: lighter;
-color: #dad5d5;
-}
-
-
-
-
-
-@media (max-width: 768px) {
+/* Responsive Adjustments for Tablets */
+@media (max-width: 1024px) {
   .container-fluid {
-    padding: 10px; /* Adjust padding for smaller screens */
+    padding: 15px;
   }
 
   .container-fluid h4 {
-    font-size: 100%; /* Decrease font size for smaller screens */
+    font-size: 20px;
   }
 
-  .container-fluid p {
-    font-size: 100%; /* Decrease font size for smaller screens */
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .impact,
+  .container-fluid .contact {
+    font-size: 15px;
+    white-space: normal; /* Allows text to wrap naturally */
+  }
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 10px;
+    gap: 15px;
   }
 
-  .headline {
-    font-size: 100%; /* Decrease font size for smaller screens */
+  .container-fluid div {
+    padding: 12px;
   }
 
-  .date, .contact {
-    font-size: 100%; /* Adjust font size for smaller screens */
+  .container-fluid h4 {
+    font-size: 18px;
+  }
+
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .impact,
+  .container-fluid .contact {
+    font-size: 14px;
+    white-space: normal; /* Allows text to wrap naturally */
+  }
+
+  .read-more {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .spinner {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Extra Small Devices (small phones, landscape view) */
+@media (max-width: 480px) {
+  .container-fluid {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .container-fluid div {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .container-fluid h4 {
+    font-size: 16px;
+  }
+
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .impact,
+  .container-fluid .contact {
+    font-size: 13px;
+    white-space: normal; /* Allows text to wrap naturally */
+    overflow-wrap: break-word;
+  }
+
+  .read-more {
+    padding: 5px 8px;
+    font-size: 12px;
   }
 }

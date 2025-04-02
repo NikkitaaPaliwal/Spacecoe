@@ -1,0 +1,138 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Hide scrollbars while maintaining functionality */
+::-webkit-scrollbar {
+  display: none !important; /* Safari and Chrome */
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Main page wrapper */
+.page-wrapper {
+  width: 100%;
+  max-width: 1900px; /* Consistent max-width for the entire site */
+  margin: 0 auto;
+  padding: 0 48px; /* Consistent padding from sides */
+  overflow: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main content container */
+.main-content {
+  padding-top: 90px; /* Space for fixed header */
+}
+
+/* General section styling */
+app-header,
+app-home,
+app-casestudies,
+app-video,
+app-reports,
+app-article,
+app-team,
+app-service,
+app-footer {
+  width: 100%;
+  position: relative;
+  margin-bottom: 64px; /* Consistent spacing between sections */
+  padding: 48px 0; /* Vertical padding within sections */
+}
+
+/* Header specific styles */
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+/* Home section styles */
+app-home {
+  min-height: calc(100vh - 90px);
+  padding-top: 0;
+}
+
+/* Section container styles */
+.section-container {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+  .page-wrapper {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-wrapper {
+    padding: 0 24px;
+  }
+
+  app-header,
+  app-home,
+  app-casestudies,
+  app-video,
+  app-reports,
+  app-article,
+  app-team,
+  app-service,
+  app-footer {
+    margin-bottom: 48px;
+    padding: 32px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 16px;
+  }
+
+  .main-content {
+    padding-top: 70px;
+  }
+
+  app-header {
+    height: 70px;
+  }
+
+  app-header,
+  app-home,
+  app-casestudies,
+  app-video,
+  app-reports,
+  app-article,
+  app-team,
+  app-service,
+  app-footer {
+    margin-bottom: 32px;
+    padding: 24px 0;
+  }
+}
+
+/* Remove min-width constraint */
+app-header,
+app-home,
+app-casestudies,
+app-video,
+app-reports,
+app-article,
+app-team,
+app-service,
+app-footer {
+  min-width: auto;
+}

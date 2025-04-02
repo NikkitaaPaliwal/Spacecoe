@@ -1,108 +1,46 @@
-<!-- 
-<div class="container-fluid">
-    <h5 class="hs">Our Team</h5>
-<div class="row">
-    <div class="col-sm-3">
-      <a href="#" class="card">
-        <img class="zoom" src="https://brandspace.deloitte.com/downloads/5f2407073ce22/lg_1645837042.jpg.jpg" class="card__image" alt="">
-        <div class="card__overlay">
-          <div class="card__header">
-            <div class="card__header-text">
-              <h3 class="card__title">Person Name</h3>
-            </div>
-          </div>
-          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-3">
-      <a href="#" class="card">
-        <img class="zoom" src="https://brandspace.deloitte.com/downloads/5f2407073ce22/lg_1645837042.jpg.jpg" class="card__image" alt="">
-        <div class="card__overlay">
-          <div class="card__header">
-            
-            <div class="card__header-text">
-              <h3 class="card__title">Person Name</h3>
-            </div>
-          </div>
-          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-3">
-      <a href="#" class="card">
-        <img class="zoom" src="https://brandspace.deloitte.com/downloads/5f2407073ce22/lg_1645837042.jpg.jpg" class="card__image" alt="">
-        <div class="card__overlay">
-          <div class="card__header">
-            <div class="card__header-text">
-              <h3 class="card__title">Person Name</h3>
-            </div>
-          </div>
-          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-3">
-        <a href="#" class="card">
-          <img class="zoom" src="https://brandspace.deloitte.com/downloads/5f2407073ce22/lg_1645837042.jpg.jpg" class="card__image" alt="">
-          <div class="card__overlay">
-            <div class="card__header">
-              <div class="card__header-text">
-                <h3 class="card__title">Person Name</h3>
-              </div>
-            </div>
-            <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-          </div>
-        </a>
+<div class="container-fluid team-container">
+  <h5 class="team-title">Meet The Team</h5>
+
+  <div class="team-grid">
+    <div class="team-member" *ngFor="let team of teams">
+      <!-- Profile Image Container -->
+      <div class="member-image">
+        <img [src]="team.fields['profile']" [alt]="team.fields['personname']">
       </div>
-</div>
 
-</div> -->
+      <!-- Member Info Container -->
+      <div class="member-details">
+        <!-- Name and Title -->
+        <div class="member-header">
+          <h3 class="member-name">{{ team.fields['personname'] }}</h3>
+          <!-- <div class="social-links"> -->
+          <a [href]="team.fields['linkedin']" target="_blank" class="linkedin-icon">
+            <i class="fab fa-linkedin"> </i>
+          </a>
+        </div>
+
+        <!-- </div> -->
+        <p class="member-title">{{ team.fields['designation'] }}</p>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <a [href]="'mailto:' + team.fields['email']" class="contact-item email">
+            <i class="far fa-envelope"></i>
+            {{ team.fields['email'] }}
+          </a>
+
+          <!-- <a [href]="'tel:' + team.fields['phone']" class="contact-item phone">
+            <i class="fas fa-phone"></i>
+            {{ team.fields['phone'] }}
+          </a> -->
+        </div>
+
+        <!-- Social Links -->
 
 
-<!-- <div class="container-fluid">
-  <div *ngFor="let team of teams">
-    <h5 class="hs">{{ team.fields['tittle'] }}</h5> 
-    <div class="row">
-      <div class="col-sm-3">
-        <a href="#" class="card">
-          <img class="zoom" [src]="team.fields['profile']" class="card__image" alt="">
-          <div class="card__overlay">
-            <div class="card__header">
-              <div class="card__header-text">
-                <h3 class="card__title">{{ team.fields['personname'] }}</h3>
-              </div>
-            </div>
-            <p class="card__description">{{ team.fields['profiledescription'] }}</p>
-          </div>
-        </a>
+        <!-- Description -->
+        <p class="member-description">{{ team.fields['profiledescription'] }}</p>
       </div>
     </div>
   </div>
-</div> -->
-
-
-
-<div class="container-fluid">
-  <!-- <h5 class="hs" *ngFor="let team of teams">{{ team.fields['tittle'] }}</h5> -->
-  <div class="row">
-    <h5 class="hs">Our Team</h5>   
-    <div class="col-sm-3" *ngFor="let team of teams">
-      <div class="card">
-        <img class="zoom" [src]="team.fields['profile']" class="card__image" alt="">
-        <div class="card__overlay">
-          <div class="card__header">
-            <div class="card__header-text">
-              <h3 class="card__title">{{ team.fields['personname'] }}</h3>
-            </div>
-          </div>
-          <p class="card__description">{{ team.fields['profiledescription'] }}</p>
-        </div>
-      </div>
-    </div>
-  
-  </div>
 </div>
-
-
-

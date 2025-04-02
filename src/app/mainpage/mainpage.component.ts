@@ -7,11 +7,13 @@ import { ArticleComponent } from '../article/article.component';
 import { CasestudiesComponent } from '../casestudies/casestudies.component';
 import { TeamComponent } from '../team/team.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ReportsComponent } from '../reports/reports.component';
+import { PodcastsComponents } from '../podacasts/podcasts.component';
 
 @Component({
   selector: 'app-mainpage',
   standalone: true,
-  imports: [HeaderComponent,HomeComponent,ServiceComponent,VideoComponent,ArticleComponent,CasestudiesComponent,TeamComponent, FooterComponent],
+  imports: [HeaderComponent, ReportsComponent, HomeComponent,ServiceComponent,VideoComponent,ArticleComponent,CasestudiesComponent,TeamComponent, FooterComponent, PodcastsComponents],
   templateUrl: './mainpage.component.html',
   styleUrl: './mainpage.component.css'
 })

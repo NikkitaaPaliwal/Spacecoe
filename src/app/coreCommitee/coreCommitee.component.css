@@ -1,0 +1,137 @@
+*{
+  font-family: 'open sans', sans-serif;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Align items to stretch full height */
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 700px; /* Ensures section has a minimum height */
+}
+
+.image-container {
+  flex: 1; /* Takes up 1 part of the flex container */
+  background: url('../../assets/images/milkyway.jpg') no-repeat center center;
+  background-size: cover; /* Cover the full area of the div */
+  min-width: 40%;
+}
+
+.content-container {
+  flex: 3; /* Takes up 3 parts of the flex container */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 45px;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #1c1c1c;
+  font-weight: 300;
+  margin: 20px 0; /* Reduced margin */
+  font-family: 'open sans', sans-serif;
+}
+
+.members-area {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping to ensure horizontal scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  justify-content: flex-start; /* Aligns children at the start of the flex container */
+  width: 100%; /* Full width to contain the cards */
+  max-width: 1200px; /* Max width constraint for the container */
+  padding: 20px;
+  gap: 20px; /* Provides space between cards */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 20px;
+  min-width: 450px; /* Minimum width for each card */
+  scroll-snap-align: start; /* Ensures the card snaps into place in the scroll container */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.members-area::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for WebKit browsers */
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  /* border-radius: 50%; */
+  object-fit: cover;
+  margin-bottom: 20px; /* Added space between photo and name */
+}
+
+.member-contact i {
+  margin: 10px; /* Adds some space between the icon and the text */
+}
+
+.member-name {
+  font-size: 1.8rem; /* Larger font size for emphasis */
+  color: #0076a8;
+  margin-bottom: 5px; /* Reduces gap between name and role */
+}
+
+.member-role {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px; /* Space before contact link */
+}
+
+.member-contact {
+  color: #0076a8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+@media (max-width: 1300px) {
+  .members-area {
+    overflow-x: scroll; /* Allows scrolling on smaller screens */
+    justify-content: flex-start;
+  }
+
+  .member-card {
+    width: 45%; /* Adjusts card width on smaller screens to show two cards */
+    min-width: 200px; /* Override the fixed min-width to allow shrinking */
+  }
+}
+
+/* Additional responsive modifications */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column; /* Stack the image and content vertically */
+    min-height: auto;
+  }
+  .image-container {
+    min-width: 100%;
+    height: 300px; /* Fixed height for mobile image container */
+  }
+  .content-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.5rem; /* Reduce title font size on very small screens */
+  }
+  .member-card {
+    width: 70%; /* Allow cards to take up more width on extra-small devices */
+    min-width: 0; /* Remove any minimum width restrictions */
+  }
+}

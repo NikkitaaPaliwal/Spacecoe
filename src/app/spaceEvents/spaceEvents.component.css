@@ -1,0 +1,146 @@
+/* Space Events Container */
+.space-events-container {
+  padding: 111px 20px;
+  /* background-color: #fff; */
+  background: url('../../assets/images/newearth.jpg') no-repeat;
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+  color: #1c1c1c; 
+  text-align: center;
+  /* border-radius: 15px; */
+  overflow: hidden; /* Important to hide the overflowed parts */
+  margin: 0 auto;
+  min-height: 1200px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.events-slider {
+  overflow-x: auto; /* Allows horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Ensures that scrolling snaps to the borders of the event cards */
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.events-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.events-header {
+  margin-bottom: 30px;
+}
+
+.events-title {
+  font-size: 3.5rem;
+  /* font-weight: 300; */
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: system-ui;
+}
+
+.events-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 972px;
+  margin: 0 auto;
+}
+
+.events-grid {
+  display: flex;
+  margin-top: 85px;
+  min-width: 100%; /* Ensures the grid takes full width for snapping */
+  /* gap: 20px; */
+}
+
+
+.event-card {
+  flex: 0 0 100%; /* Each card takes full viewport width */
+  display: flex;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 500px; /* Adjusted for better focus */
+}
+
+.event-image {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  clip-path: path('M0 0 Q 50% 0, 100% 0 L 100% 100% Q 50% 80%, 0 100% L 0 0');
+}
+
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+
+  .event-content {
+  padding: 20px;
+    background: url("../../assets/images/newearth.jpg");
+    width: 40%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .line {
+    display: block;
+    width: 20%;
+    height: 3px;
+    background: #90702f;
+    margin: 28px auto;
+  }
+.event-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #ffffff; 
+  margin-bottom: 10px;
+  font-family: system-ui;
+}
+
+.event-description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+.event-info {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Smooth fadeIn animation when scrolled into view */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.event-card {
+  animation: fadeInUp 1s ease-out;
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .event-image, .event-content {
+    width: 100%;
+  }
+
+  .event-content {
+    width: 100%;
+  }
+}

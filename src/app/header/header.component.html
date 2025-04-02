@@ -1,101 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg" ngSkipHydration>
-  <div  class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="./assets/images/deloitte.svg" alt="" >
-      <p class="Global">Global Downstream Space COE</p> 
+  <div class="container">
+    <!-- Left side - Logo -->
+    <a class="navbar-brand">
+      <img src="./assets/images/deloitte.svg" (click)="scrollToMainpage()" alt="Deloitte Logo">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="carousel-caption d-none d-md-block">
+      <div *ngFor="let tabs of tabs" class="carousel-tabs">
+        <button class="tab-link" routerLink="/publications" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          {{ tabs.fields['tab1'] }}</button>
+        <button class="tab-link" routerLink="/solutions" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"> {{
+          tabs.fields['tab2'] }}</button>
+        <button class="tab-link" routerLink="/guildpage" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">{{
+          tabs.fields['tab3'] }} </button>
+        <button class="tab-link" routerLink="/globe" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"> {{
+          tabs.fields['tab4'] }}</button>
+          <a href="#team" class="tab-link"  style="text-decoration: none;" [class.active]="activeTab === 'team'" (click)="scrollToTeam()">
+            {{ tabs.fields['tab5'] }}
+          </a>
+          
+      </div>
+    </div>
+    <!-- Mobile toggle button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-    <div class="d-flex justify-content-between align-items-center w-100">
-      <div></div>
-      <div class="navbar-nav text-center"> 
-        <div class="dropdown">
-          <button class="dropbtn">Guild
-             <span class="fa-solid fa fa-chevron-down"></span>
-           </button>
-           <div class="dropdown-content">
-            <div class="row">
-              <div class="col-3">
-              <a href="/scitechadvancement">STA Sci Tech Advancement</a>
-              <a href="/scitechadvancement/Qualcomm Announces Support for India’s NavIC Satellite Navigation System L1 signals in Commercial Chipset Platforms">Qualcomm Announces</a>
-              <a href="/scitechadvancement/Plants in Space to address sustainability challenges">Plants in Space</a>
-              <a href="/scitechadvancement/Space Spotlight: Moving spacecraft with mothball power">Space Spotlight</a>
-              <a href="/scitechadvancement/Homegrown AgTech using space to benefit farmers">Homegrown AgTech</a> 
-              </div>
-              <div class="col-3">
-                <a href="/startup">Startup</a>
-                <a href="/startup/Rocket Lab Launches StriX-3 Satellite for Synspective">Rocket Lab Launches</a>
-                <a href="/startup/SpeQtral and Arquimea Announce Strategic MOU to Advance Quantum Secure Solutions and Satellite Technologies">Announce Strategic MOU</a>
-                <a href="/startup/5 spacetech startups taking off in Southeast Asia">5 spacetech startups</a>
-                <a href="/startup/Space startup Astroscale explores Tokyo listing by June">Space startup Astroscale</a>
-              </div>
-              <div class="col-3">
-                <a href="/policyandregulationchange">Policy and regulation change</a>
-                <a href="/policyandregulationchange/Why Russia won’t have its anti-satellite weapon in space anytime soon">Why Russia won’t have its anti-satellite</a>
-                <a href="/policyandregulationchange/Senate bills seek to reform commercial space regulations">Senate bills</a>
-                <a href="/policyandregulationchange/Senate passes the Orbital Sustainability Act of 2023 or the Orbits Act of 2023">Senate passes the Orbital Sustainability</a>
-                <a href="/policyandregulationchange/US and Japan to sponsor a U.N. Security Resolution to ban deployment of nuclear weapons in space">US and Japan to sponsor</a>
-              </div>
-              <div class="col-3">
-                <a href="/investmentandfunding">Investment and funding</a>
-                <a href="/investmentandfunding/Qosmosys Secures Historic US$100 Million In Seed Funding, Sets New Industry Record">Qosmosys Secures Historic US$100</a>
-                <a href="/investmentandfunding/Telkomsat investing IDR 3.5 trillion $218 million for Satelit Merah Putih 2, Jasindo gives full coverage">Telkomsat investing IDR 3.5 trillion</a>
-                <a href="/investmentandfunding/Elon Musk's SpaceX to Invest in Indonesia's New Capital City for Starlink Internet Network">Elon Musk's SpaceX to Invest</a>
-                <a href="/investmentandfunding/Kominfo, Indonesia's Ministry of Communication and Informatics, unveils plans for the Satria-2 Satellite funded through foreign investment.">Kominfo unveils plans for the Satria-2</a>
-              </div>
-              <div class="col-3">
-                <a href="/industryandpartnerships">Industry and partnerships</a>
-              <a href="/industryandpartnerships/NATO to Strengthen Partnership With Space Industry, Launches APSS">NATO to Strengthen Partnership</a>
-              <a href="/industryandpartnerships/Astrolight Joins DIANA to Accelerate Innovation in Defense Tech">Astrolight Joins DIANA</a>
-              <a href="/industryandpartnerships/FACT SHEET: STRENGTHENING U.S. INTERNATIONAL SPACE PARTNERSHIPS">Fact Sheet: strengthening</a>
-              <a href="/industryandpartnerships/A Beacon of Hope: Artemis II will send first woman and first person of color around the moon">A Beacon of Hope</a>
-              </div>
-              <div class="col-3">
-                <a href="/competitor">Competitor</a>
-                <a href="/competitor/From design to launch: AI capabilities for the future of spaceflight How AI is accelerating the pace of space engineering">From design to launch</a>
-                <a href="/competitor/Elevating the Space Business: EY Japan's Strategic Move">Elevating the Space Business</a>
-                <a href="/competitor/ST Engineering and EY sign MOU in space technology and geospatial analytics for sustainability purposes">ST Engineering and EY sign MOU</a>
-                <a href="/competitor/KPMG selects winners for nature and space start-up competitions">KPMG selects winners</a>
-              </div>
-              <div class="col-3">
-                <a href="/other">Other</a>
-                <a href="/other/SpaceX's Starlink Satellite Internet Service Is Now Open to the Public, But It's Not Cheap">SpaceX's Starlink Satellite Internet</a>
-                <a href="/other/Amazon's Kuiper System Plans to Launch 3,236 Satellites to Provide Global Internet Coverage">Amazon's Kuiper System Plans to Launch </a>
-                <a href="/other/How SpaceX, OneWeb and Amazon Will Make Space-Based Internet a Reality">How SpaceX, OneWeb and Amazon</a>
-                <a href="/other/ISS Astronauts Are Testing a New Surface Coating to Fight Space Germs">ISS Astronauts Are Testing a New Surface</a>
-              </div>
-              <div class="col-3">
-                <a href="/otherevent">Other-event</a>
-                <a href="/otherevent/10th Asia-Pacific Space Generation Workshop Space Generation Advisory Council">10th Asia-Pacific Space Generation</a>
-                <a href="/otherevent/SatelliteAsia">SatelliteAsia</a>
-                <a href="/otherevent/Asia Satellite Business Week">Asia Satellite Business Week</a>
-                <a href="/otherevent/The Australian Space Summit and Exhibition">The Australian Space Summit and Exhibition </a>
-              </div>
-            </div>
-           </div>
-         </div>
-         <!-- <a class="nav-link" href="#">Services</a> -->
-         <!-- <a class="nav-link" href="#">Careers</a> -->
-       <!-- <a class="nav-link active" aria-current="page" href="#">Insights</a> -->
-       <!-- <a class="nav-link" href="#">Industries</a> -->
+
+    <!-- Right side - Search and User -->
+    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+      <div class="nav-right ms-auto d-flex align-items-center">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="searchQuery" (input)="search()" />
+          <span class="search-icon material-icons">Search</span>
+          <ul *ngIf="showSuggestions">
+            <li class="card" *ngFor="let suggestion of suggestions">
+              <a (click)="redirectToContent(suggestion)">{{ suggestion.snippet }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-icon">
+          <span class="fa fa-user"></span>
+        </div>
       </div>
-      <!-- <div class="navbar-nav">  -->
-              <div class="search-container">
-                <input type="text" [(ngModel)]="searchQuery" (input)="search()" placeholder="Search..." />
-                <ul *ngIf="showSuggestions">
-                  <li class="card" *ngFor="let suggestion of suggestions">
-                    <a (click)="redirectToContent(suggestion)">{{ suggestion.snippet }}</a>  
-                  </li>
-                </ul>
-              </div>        
-      <!-- </div> -->
-      <div>
-        <span class="fa fa-user"></span> 
-      </div>  
-      </div>   
-      <div></div>
     </div>
-  </div>
+  <!-- </div> -->
 </nav>

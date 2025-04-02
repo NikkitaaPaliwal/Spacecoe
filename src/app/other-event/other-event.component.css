@@ -1,75 +1,179 @@
-
+/* Base Container Styles */
 .container-fluid {
   padding: 20px;
-  background-color: black;
+  background-color: #1c1c1e;
   color: #FFFFFF;
   font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: backgroundFade 10s infinite;
 }
 
+/* Background Fade Animation */
+@keyframes backgroundFade {
+  0% { background-color: #1c1c1e; }
+  50% { background-color: #333335; }
+  100% { background-color: #1c1c1e; }
+}
+
+/* Individual Card Styles */
+.container-fluid div {
+  background-color: #292929;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  transition: transform 0.3s ease;
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+.container-fluid div:hover {
+  transform: scale(1.02);
+}
+
+/* Typography and Animations */
+.container-fluid h4,
+.container-fluid .headline,
+.container-fluid .detail,
+.container-fluid .registration-fee,
+.container-fluid .location {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: writingAnimation 2s steps(30, end) forwards;
+}
+
+/* Writing Animation */
+@keyframes writingAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Staggered Animation for Sequential Reveal */
 .container-fluid h4 {
-  margin-bottom: 10px;
+  animation-delay: 0.5s;
+}
+.container-fluid .headline {
+  animation-delay: 1s;
+}
+.container-fluid .detail {
+  animation-delay: 1.5s;
+}
+.container-fluid .registration-fee {
+  animation-delay: 2s;
+}
+.container-fluid .location {
+  animation-delay: 2.5s;
 }
 
-.container-fluid p {
+/* Headings and Text */
+.container-fluid h4 {
+  font-size: 1.5rem;
+  color: #00e676;
   margin-bottom: 5px;
 }
 
-.read-more {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color:  #26890d;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 3px;
-  transition: background-color 0.3s;
+.container-fluid .headline {
+  color: #ffeb3b;
+  font-size: 20px;
   font-weight: bold;
-  height: 25px;
-  font-size: small;
-}
-.read-more:hover {
-  
-  color: white;
 }
 
-
-.impact {
+.container-fluid .date {
+  font-size: 0.9rem;
+  color: #bdbdbd;
   font-style: italic;
-  color: rgb(210, 204, 204);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.headline {
-  font-size: 18px;
-  font-weight: bold;
+.container-fluid .location {
+  font-size: 1rem;
+  color: #ff9800;
   margin-bottom: 10px;
 }
 
-.date,.contact{
-font-size: smaller;
-font-weight: lighter;
-color: #dad5d5;
+.container-fluid .detail,
+.container-fluid .registration-fee {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
 }
 
+.container-fluid .registration-fee {
+  font-style: italic;
+  color: #90caf9;
+}
 
-
-
-@media (max-width: 768px) {
+/* Responsive Adjustments for Tablets */
+@media (max-width: 1024px) {
   .container-fluid {
-    padding: 10px; /* Adjust padding for smaller screens */
+    padding: 15px;
   }
 
   .container-fluid h4 {
-    font-size: 100%; /* Decrease font size for smaller screens */
+    font-size: 20px;
   }
 
-  .container-fluid p {
-    font-size: 100%; /* Decrease font size for smaller screens */
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .registration-fee,
+  .container-fluid .location {
+    font-size: 15px;
+    white-space: normal;
+  }
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 10px;
+    gap: 15px;
   }
 
-  .headline {
-    font-size: 100%; /* Decrease font size for smaller screens */
+  .container-fluid div {
+    padding: 12px;
   }
 
-  .date, .contact {
-    font-size: 100%; /* Adjust font size for smaller screens */
+  .container-fluid h4 {
+    font-size: 18px;
+  }
+
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .registration-fee,
+  .container-fluid .location {
+    font-size: 14px;
+    white-space: normal;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .container-fluid {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .container-fluid div {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .container-fluid h4 {
+    font-size: 16px;
+  }
+
+  .container-fluid .headline,
+  .container-fluid .detail,
+  .container-fluid .registration-fee,
+  .container-fluid .location {
+    font-size: 13px;
+    white-space: normal;
   }
 }
