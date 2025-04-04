@@ -2,23 +2,23 @@
 .space-events-container {
   padding: 111px 20px;
   /* background-color: #fff; */
-  background: url('../../../assets/images/newearth.jpg') no-repeat;
+  background: url(../../assets/images/newearth.jpg) no-repeat;
   background-size: cover;
-  font-family: 'Arial', sans-serif;
-  color: #1c1c1c; 
+  font-family: "Arial", sans-serif;
+  color: #1c1c1c;
   text-align: center;
   /* border-radius: 15px; */
   overflow: hidden; /* Important to hide the overflowed parts */
   margin: 0 auto;
   min-height: 1200px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .events-slider {
   overflow-x: auto; /* Allows horizontal scrolling */
   scroll-snap-type: x mandatory; /* Ensures that scrolling snaps to the borders of the event cards */
-  -ms-overflow-style: none;  /* Internet Explorer and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .events-slider::-webkit-scrollbar {
@@ -52,7 +52,6 @@
   /* gap: 20px; */
 }
 
-
 .event-card {
   flex: 0 0 100%; /* Each card takes full viewport width */
   display: flex;
@@ -65,37 +64,35 @@
   width: 40%;
   height: auto;
   object-fit: cover;
-  clip-path: path('M0 0 Q 50% 0, 100% 0 L 100% 100% Q 50% 80%, 0 100% L 0 0');
+  clip-path: path("M0 0 Q 50% 0, 100% 0 L 100% 100% Q 50% 80%, 0 100% L 0 0");
 }
-
 
 .event-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-
-  .event-content {
+.event-content {
   padding: 20px;
-    background: url("../../../assets/images/newearth.jpg");
-    width: 40%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  background: url("../../assets/images/newearth.jpg");
+  width: 40%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .line {
-    display: block;
-    width: 20%;
-    height: 3px;
-    background: #90702f;
-    margin: 28px auto;
-  }
+.line {
+  display: block;
+  width: 20%;
+  height: 3px;
+  background: #90702f;
+  margin: 28px auto;
+}
 .event-title {
   font-size: 3.5rem;
   font-weight: 300;
-  color: #ffffff; 
+  color: #ffffff;
   margin-bottom: 10px;
   font-family: system-ui;
 }
@@ -136,7 +133,8 @@
     height: auto;
   }
 
-  .event-image, .event-content {
+  .event-image,
+  .event-content {
     width: 100%;
   }
 
