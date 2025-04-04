@@ -1,0 +1,33 @@
+{
+  "routes": [
+    "/article",
+    "/auto",
+    "/casestudies",
+    "/competitor",
+    "/footer",
+    "/globe",
+    "/guild",
+    "/guildpage",
+    "/guildStart",
+    "/header",
+    "/home",
+    "/industryandpartnerships",
+    "/investmentandfunding",
+    "/mainpage",
+    "/other",
+    "/otherevent",
+    "/podcasts",
+    "/policy",
+    "/policyandregulation",
+    "/policyandregulationchange",
+    "/publications",
+    "/reports",
+    "/scitechadvancement",
+    "/service",
+    "/solutions",
+    "/spacecircle",
+    "/startup",
+    "/team",
+    "/video"
+  ]
+}
